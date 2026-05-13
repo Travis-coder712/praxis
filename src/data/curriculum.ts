@@ -176,13 +176,13 @@ export const MODULES: Module[] = [
     summary:
       'Where your prompts go. Data residency. M365\'s data plane. Vendor terms. Australian-specific considerations. What\'s defensible to do with sensitive information.',
     accent: '#f43f5e',
-    status: 'planned',
+    status: 'built',
     lessons: [
-      { id: 'where-prompts-go',  number: 1, title: 'Where your prompts actually go',         summary: 'A clear mental model of the data flow.',                            readingTime: '8 min', status: 'planned' },
-      { id: 'm365-data-plane',   number: 2, title: 'The Microsoft 365 data plane',            summary: 'Why Copilot M365 is safer than ChatGPT.com.',                       readingTime: '9 min', status: 'planned' },
-      { id: 'vendor-terms',      number: 3, title: 'Vendor terms (Anthropic, OpenAI, Google)',summary: 'What each says about training on your prompts.',                    readingTime: '8 min', status: 'planned' },
-      { id: 'aus-specific',      number: 4, title: 'Australian-specific considerations',     summary: 'Privacy Act, OAIC guidance, sovereign data.',                       readingTime: '9 min', status: 'planned' },
-      { id: 'practical-rules',   number: 5, title: 'Practical safe-use rules',                summary: 'A short list you can give your team tomorrow.',                     readingTime: '6 min', status: 'planned' },
+      { id: 'where-prompts-go',  number: 1, title: 'Where your prompts actually go',         summary: 'A clear mental model of the data flow.',                            readingTime: '8 min', status: 'built' },
+      { id: 'm365-data-plane',   number: 2, title: 'The Microsoft 365 data plane',            summary: 'Why Copilot M365 is safer than ChatGPT.com.',                       readingTime: '9 min', status: 'built' },
+      { id: 'vendor-terms',      number: 3, title: 'Vendor terms (Anthropic, OpenAI, Google)',summary: 'What each says about training on your prompts.',                    readingTime: '8 min', status: 'built' },
+      { id: 'aus-specific',      number: 4, title: 'Australian-specific considerations',     summary: 'Privacy Act, OAIC guidance, sovereign data.',                       readingTime: '9 min', status: 'built' },
+      { id: 'practical-rules',   number: 5, title: 'Practical safe-use rules',                summary: 'A short list you can give your team tomorrow.',                     readingTime: '6 min', status: 'built' },
     ],
   },
   {

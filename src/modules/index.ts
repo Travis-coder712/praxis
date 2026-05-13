@@ -62,6 +62,13 @@ import {
   WhereAgentsFail,
   TryItAgent,
 } from './module-8'
+import {
+  WherePromptsGo,
+  M365DataPlane,
+  VendorTerms,
+  AusSpecific,
+  PracticalRules,
+} from './module-9'
 
 export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   // Module 1 — How AI actually works
@@ -116,4 +123,10 @@ export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   'agents/flavours':                            AgentFlavours,
   'agents/where-they-fail':                     WhereAgentsFail,
   'agents/try-it-agent':                        TryItAgent,
+  // Module 9 — Privacy, security, compliance
+  'privacy-security/where-prompts-go':          WherePromptsGo,
+  'privacy-security/m365-data-plane':           M365DataPlane,
+  'privacy-security/vendor-terms':              VendorTerms,
+  'privacy-security/aus-specific':              AusSpecific,
+  'privacy-security/practical-rules':           PracticalRules,
 }
