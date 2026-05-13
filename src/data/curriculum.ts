@@ -144,12 +144,12 @@ export const MODULES: Module[] = [
     summary:
       'Why one model is rarely the best answer for the whole job. Critic-vs-author splits. The "Claude Council" pattern. Practical orchestration patterns.',
     accent: '#06b6d4',
-    status: 'planned',
+    status: 'built',
     lessons: [
-      { id: 'why-multi-model',  number: 1, title: 'Why use more than one model',           summary: 'Different models, different blind spots.',                          readingTime: '7 min', status: 'planned' },
-      { id: 'critic-author',    number: 2, title: 'Critic vs author splits',               summary: 'Pattern: one model writes, another tears it apart.',                readingTime: '8 min', status: 'planned' },
-      { id: 'council-pattern',  number: 3, title: 'The Claude Council — challenge + check',summary: 'Get multiple models to review the same answer.',                    readingTime: '9 min', status: 'planned' },
-      { id: 'try-it-council',   number: 4, title: 'Try it — orchestrate three models',     summary: 'Hands-on Council exercise.',                                         readingTime: '15 min', status: 'planned' },
+      { id: 'why-multi-model',  number: 1, title: 'Why use more than one model',           summary: 'Different models, different blind spots.',                          readingTime: '7 min', status: 'built' },
+      { id: 'critic-author',    number: 2, title: 'Critic vs author splits',               summary: 'Pattern: one model writes, another tears it apart.',                readingTime: '8 min', status: 'built' },
+      { id: 'council-pattern',  number: 3, title: 'The Claude Council — challenge + check',summary: 'Get multiple models to review the same answer.',                    readingTime: '9 min', status: 'built' },
+      { id: 'try-it-council',   number: 4, title: 'Try it — orchestrate three models',     summary: 'Hands-on Council exercise.',                                         readingTime: '15 min', status: 'built' },
     ],
   },
   {

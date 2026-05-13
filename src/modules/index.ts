@@ -50,6 +50,12 @@ import {
   SkillsHooks,
   TryItCC,
 } from './module-6'
+import {
+  WhyMultiModel,
+  CriticAuthor,
+  CouncilPattern,
+  TryItCouncil,
+} from './module-7'
 
 export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   // Module 1 — How AI actually works
@@ -94,4 +100,9 @@ export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   'claude-code/beyond-pwas':                    BeyondPwas,
   'claude-code/skills-hooks':                   SkillsHooks,
   'claude-code/try-it-cc':                      TryItCC,
+  // Module 7 — Multi-model workflows: the Council pattern
+  'multi-model/why-multi-model':                WhyMultiModel,
+  'multi-model/critic-author':                  CriticAuthor,
+  'multi-model/council-pattern':                CouncilPattern,
+  'multi-model/try-it-council':                 TryItCouncil,
 }
