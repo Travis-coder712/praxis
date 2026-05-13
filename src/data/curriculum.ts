@@ -160,12 +160,12 @@ export const MODULES: Module[] = [
     summary:
       'What "agent" actually means in 2026. Copilot agents, Claude agents, custom GPTs. Where they fail. Practical guardrails. A simple agent you can build today.',
     accent: '#fb923c',
-    status: 'planned',
+    status: 'built',
     lessons: [
-      { id: 'what-is-an-agent',   number: 1, title: 'What an agent actually is',           summary: 'Stripped of hype: an LLM that can call tools and act in a loop.',  readingTime: '8 min', status: 'planned' },
-      { id: 'flavours',           number: 2, title: 'Copilot agents, Claude agents, custom GPTs', summary: 'How each platform handles agents — what they share, what differs.', readingTime: '9 min', status: 'planned' },
-      { id: 'where-they-fail',    number: 3, title: 'Where agents fail',                   summary: 'Long horizons. Compounding error. Authority bound.',                readingTime: '8 min', status: 'planned' },
-      { id: 'try-it-agent',       number: 4, title: 'Try it — build a simple agent',       summary: 'A 30-minute email-triage agent.',                                   readingTime: '20 min', status: 'planned' },
+      { id: 'what-is-an-agent',   number: 1, title: 'What an agent actually is',           summary: 'Stripped of hype: an LLM that can call tools and act in a loop.',  readingTime: '8 min', status: 'built' },
+      { id: 'flavours',           number: 2, title: 'Copilot agents, Claude agents, custom GPTs', summary: 'How each platform handles agents — what they share, what differs.', readingTime: '9 min', status: 'built' },
+      { id: 'where-they-fail',    number: 3, title: 'Where agents fail',                   summary: 'Long horizons. Compounding error. Authority bound.',                readingTime: '8 min', status: 'built' },
+      { id: 'try-it-agent',       number: 4, title: 'Try it — build a simple agent',       summary: 'A 30-minute email-triage agent.',                                   readingTime: '20 min', status: 'built' },
     ],
   },
   {

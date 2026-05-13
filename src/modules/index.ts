@@ -56,6 +56,12 @@ import {
   CouncilPattern,
   TryItCouncil,
 } from './module-7'
+import {
+  WhatIsAnAgent,
+  AgentFlavours,
+  WhereAgentsFail,
+  TryItAgent,
+} from './module-8'
 
 export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   // Module 1 — How AI actually works
@@ -105,4 +111,9 @@ export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   'multi-model/critic-author':                  CriticAuthor,
   'multi-model/council-pattern':                CouncilPattern,
   'multi-model/try-it-council':                 TryItCouncil,
+  // Module 8 — Agents and automation
+  'agents/what-is-an-agent':                    WhatIsAnAgent,
+  'agents/flavours':                            AgentFlavours,
+  'agents/where-they-fail':                     WhereAgentsFail,
+  'agents/try-it-agent':                        TryItAgent,
 }
