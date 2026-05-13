@@ -69,6 +69,15 @@ import {
   AusSpecific,
   PracticalRules,
 } from './module-9'
+import {
+  EmailPlaybook,
+  MeetingsPlaybook,
+  DraftingPlaybook,
+  ResearchPlaybook,
+  CodePlaybook,
+  DecisionsPlaybook,
+  RebuildYourDay,
+} from './module-10'
 
 export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   // Module 1 — How AI actually works
@@ -129,4 +138,12 @@ export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   'privacy-security/vendor-terms':              VendorTerms,
   'privacy-security/aus-specific':              AusSpecific,
   'privacy-security/practical-rules':           PracticalRules,
+  // Module 10 — The playbook: AI in daily work
+  'playbook/email':                             EmailPlaybook,
+  'playbook/meetings':                          MeetingsPlaybook,
+  'playbook/drafting':                          DraftingPlaybook,
+  'playbook/research':                          ResearchPlaybook,
+  'playbook/code':                              CodePlaybook,
+  'playbook/decisions':                         DecisionsPlaybook,
+  'playbook/rebuild':                           RebuildYourDay,
 }
