@@ -72,14 +72,14 @@ export const MODULES: Module[] = [
     summary:
       'Anatomy of good prompts, personas, constraint-based prompting (no glaze, be critical), iteration, templates, and prompt libraries. Includes a "before and after" exercise you can run on real work prompts.',
     accent: '#8b5cf6',
-    status: 'planned',
+    status: 'built',
     lessons: [
-      { id: 'anatomy-of-a-prompt',  number: 1, title: 'Anatomy of a good prompt',          summary: 'Role · task · context · constraints · examples — the five-part framework.', readingTime: '8 min', status: 'planned' },
-      { id: 'personas',             number: 2, title: 'Personas — when to use them',       summary: 'Why "you are an expert X" works, and when it just adds clutter.',         readingTime: '7 min', status: 'planned' },
-      { id: 'constraint-prompting', number: 3, title: 'Constraint prompting — no glaze',   summary: 'How to make Copilot critical, not effusive. The exact phrases that work.', readingTime: '9 min', status: 'planned' },
-      { id: 'iteration',            number: 4, title: 'Iteration — refine, don\'t restart',summary: 'Treat prompts like code. Edit them. Save the good ones.',                readingTime: '7 min', status: 'planned' },
-      { id: 'templates',            number: 5, title: 'Templates and few-shot prompting',  summary: 'When showing examples beats describing what you want.',                  readingTime: '8 min', status: 'planned' },
-      { id: 'prompt-library',       number: 6, title: 'Build your personal prompt library',summary: 'The highest-leverage personal investment a knowledge worker can make.', readingTime: '6 min', status: 'planned' },
+      { id: 'anatomy-of-a-prompt',  number: 1, title: 'Anatomy of a good prompt',          summary: 'Role · task · context · constraints · examples — the five-part framework.', readingTime: '9 min', status: 'built' },
+      { id: 'personas',             number: 2, title: 'Personas — when to use them',       summary: 'Why "you are an expert X" works, and when it just adds clutter.',         readingTime: '8 min', status: 'built' },
+      { id: 'constraint-prompting', number: 3, title: 'Constraint prompting — no glaze',   summary: 'How to make Copilot critical, not effusive. The exact phrases that work.', readingTime: '10 min', status: 'built' },
+      { id: 'iteration',            number: 4, title: 'Iteration — refine, don\'t restart',summary: 'Treat prompts like code. Edit them. Save the good ones.',                readingTime: '8 min', status: 'built' },
+      { id: 'templates',            number: 5, title: 'Templates and few-shot prompting',  summary: 'When showing examples beats describing what you want.',                  readingTime: '9 min', status: 'built' },
+      { id: 'prompt-library',       number: 6, title: 'Build your personal prompt library',summary: 'The highest-leverage personal investment a knowledge worker can make.', readingTime: '7 min', status: 'built' },
     ],
   },
   {

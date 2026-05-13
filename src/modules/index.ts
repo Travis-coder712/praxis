@@ -18,6 +18,14 @@ import {
   DecisionMatrix,
   SideBySide,
 } from './module-2'
+import {
+  AnatomyOfAPrompt,
+  Personas,
+  ConstraintPrompting,
+  Iteration,
+  TemplatesAndFewShot,
+  PromptLibrary,
+} from './module-3'
 
 export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   // Module 1 — How AI actually works
@@ -34,4 +42,11 @@ export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   'frontier-models/versioning':             HowVersioningWorks,
   'frontier-models/decision-matrix':        DecisionMatrix,
   'frontier-models/side-by-side':           SideBySide,
+  // Module 3 — Prompting
+  'prompting/anatomy-of-a-prompt':          AnatomyOfAPrompt,
+  'prompting/personas':                     Personas,
+  'prompting/constraint-prompting':         ConstraintPrompting,
+  'prompting/iteration':                    Iteration,
+  'prompting/templates':                    TemplatesAndFewShot,
+  'prompting/prompt-library':               PromptLibrary,
 }
