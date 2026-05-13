@@ -127,13 +127,13 @@ export const MODULES: Module[] = [
     summary:
       'What Claude Code is and why it\'s different from the chat product. The PWA + GitHub + Pages pattern that actually works. Skills, hooks, sub-agents. Real examples.',
     accent: '#d946ef',
-    status: 'planned',
+    status: 'built',
     lessons: [
-      { id: 'what-is-cc',  number: 1, title: 'What Claude Code is and why it\'s different',  summary: 'A coding agent with a terminal, your filesystem, and patience.',     readingTime: '9 min', status: 'planned' },
-      { id: 'pwa-pattern', number: 2, title: 'The PWA + GitHub + Pages pattern',             summary: 'One battle-tested workflow for shipping useful tools.',              readingTime: '11 min', status: 'planned' },
-      { id: 'beyond-pwas', number: 3, title: 'Beyond PWAs — what else Claude Code can do',   summary: 'Scripts, data pipelines, automation, refactors.',                    readingTime: '9 min', status: 'planned' },
-      { id: 'skills-hooks',number: 4, title: 'Skills, hooks, sub-agents',                    summary: 'The advanced controls most users never touch.',                     readingTime: '10 min', status: 'planned' },
-      { id: 'try-it-cc',   number: 5, title: 'Try it — build something small',                summary: 'A guided 30-minute build.',                                          readingTime: '20 min', status: 'planned' },
+      { id: 'what-is-cc',  number: 1, title: 'What Claude Code is and why it\'s different',  summary: 'A coding agent with a terminal, your filesystem, and patience.',     readingTime: '9 min', status: 'built' },
+      { id: 'pwa-pattern', number: 2, title: 'The PWA + GitHub + Pages pattern',             summary: 'One battle-tested workflow for shipping useful tools.',              readingTime: '11 min', status: 'built' },
+      { id: 'beyond-pwas', number: 3, title: 'Beyond PWAs — what else Claude Code can do',   summary: 'Scripts, data pipelines, automation, refactors.',                    readingTime: '9 min', status: 'built' },
+      { id: 'skills-hooks',number: 4, title: 'Skills, hooks, sub-agents',                    summary: 'The advanced controls most users never touch.',                     readingTime: '10 min', status: 'built' },
+      { id: 'try-it-cc',   number: 5, title: 'Try it — build something small',                summary: 'A guided 30-minute build.',                                          readingTime: '20 min', status: 'built' },
     ],
   },
   {

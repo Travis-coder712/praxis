@@ -43,6 +43,13 @@ import {
   LongContextUseCases,
   TryItProjects,
 } from './module-5'
+import {
+  WhatIsClaudeCode,
+  PwaPattern,
+  BeyondPwas,
+  SkillsHooks,
+  TryItCC,
+} from './module-6'
 
 export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   // Module 1 — How AI actually works
@@ -81,4 +88,10 @@ export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   'claude-deep-dive/projects':                  ProjectsArtefacts,
   'claude-deep-dive/long-context':              LongContextUseCases,
   'claude-deep-dive/try-it-projects':           TryItProjects,
+  // Module 6 — Claude Code: the power-user tool
+  'claude-code/what-is-cc':                     WhatIsClaudeCode,
+  'claude-code/pwa-pattern':                    PwaPattern,
+  'claude-code/beyond-pwas':                    BeyondPwas,
+  'claude-code/skills-hooks':                   SkillsHooks,
+  'claude-code/try-it-cc':                      TryItCC,
 }
