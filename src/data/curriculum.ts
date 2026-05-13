@@ -55,13 +55,13 @@ export const MODULES: Module[] = [
     summary:
       'A practical map of the major AI models in 2026. Strengths, weaknesses, when to use which, and a side-by-side experiment to feel the differences yourself.',
     accent: '#2563eb',
-    status: 'planned',
+    status: 'built',
     lessons: [
-      { id: 'the-six-families',   number: 1, title: 'The six major model families',           summary: 'OpenAI, Anthropic, Google, Meta, xAI, DeepSeek — orient yourself.', readingTime: '8 min',  status: 'planned' },
-      { id: 'strengths-weaknesses',number: 2, title: 'Comparative strengths and weaknesses',  summary: 'Reasoning, code, long context, multimodal — what each does best.', readingTime: '10 min', status: 'planned' },
-      { id: 'versioning',          number: 3, title: 'How model versioning works',            summary: 'Why "ChatGPT" or "Claude" isn\'t enough — you need the version.', readingTime: '6 min',  status: 'planned' },
-      { id: 'decision-matrix',     number: 4, title: 'Which model for which task',            summary: 'A decision matrix you can actually use.',                          readingTime: '8 min',  status: 'planned' },
-      { id: 'side-by-side',        number: 5, title: 'Side-by-side experiment',               summary: 'Five prompts, three models. See the differences yourself.',      readingTime: '12 min', status: 'planned' },
+      { id: 'the-six-families',   number: 1, title: 'The six major model families',           summary: 'OpenAI, Anthropic, Google, Meta, xAI, DeepSeek — orient yourself.', readingTime: '8 min',  status: 'built' },
+      { id: 'strengths-weaknesses',number: 2, title: 'Comparative strengths and weaknesses',  summary: 'Reasoning, code, long context, multimodal — what each does best.', readingTime: '10 min', status: 'built' },
+      { id: 'versioning',          number: 3, title: 'How model versioning works',            summary: 'Why "ChatGPT" or "Claude" isn\'t enough — you need the version.', readingTime: '7 min',  status: 'built' },
+      { id: 'decision-matrix',     number: 4, title: 'Which model for which task',            summary: 'A decision matrix you can actually use.',                          readingTime: '9 min',  status: 'built' },
+      { id: 'side-by-side',        number: 5, title: 'Side-by-side experiment — the Module 2 capstone', summary: 'Five prompts, three models. See the differences yourself.',      readingTime: '15 min', status: 'built' },
     ],
   },
   {
