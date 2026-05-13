@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg:          #0b0d12;
+  --color-surface:     #161922;
+  --color-surface-2:   #1d2230;
+  --color-surface-3:   #252b3d;
+  --color-border:      #2a3045;
+  --color-border-2:    #353b54;
+  --color-text:        #e6e8f0;
+  --color-text-dim:    #9ca0b5;
+  --color-text-mute:   #6b7088;
+  --color-praxis:      #2563eb;
+  --color-praxis-2:    #0ea5e9;
+  --color-praxis-3:    #06b6d4;
+  --color-beginner:    #10b981;
+  --color-intermediate:#f59e0b;
+  --color-advanced:    #ec4899;
+  --color-tryit:       #8b5cf6;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse 800px 600px at 5% -5%, rgba(37,99,235,0.08), transparent 60%),
+    radial-gradient(ellipse 600px 400px at 95% 100%, rgba(14,165,233,0.06), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Subtle scroll */
+html { scroll-behavior: smooth; }
+
+/* Reset details marker */
+details summary { list-style: none; cursor: pointer; }
+details summary::-webkit-details-marker { display: none; }
+
+/* Headings */
+h1, h2, h3, h4 { letter-spacing: -0.015em; }
+
+/* Code */
+code {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--color-surface-2);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--color-text);
+}
+
+/* Selection */
+::selection { background: rgba(37,99,235,0.35); color: var(--color-text); }
