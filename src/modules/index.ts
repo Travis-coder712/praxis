@@ -69,17 +69,15 @@ import {
   AusSpecific,
   PracticalRules,
 } from './module-9'
-// Module 10 is built but on hold — left out of the registry by intent.
-// Source remains at ./module-10.tsx so the work isn't lost; rewire when ready.
-// import {
-//   EmailPlaybook,
-//   MeetingsPlaybook,
-//   DraftingPlaybook,
-//   ResearchPlaybook,
-//   CodePlaybook,
-//   DecisionsPlaybook,
-//   RebuildYourDay,
-// } from './module-10'
+import {
+  EmailPlaybook,
+  MeetingsPlaybook,
+  DraftingPlaybook,
+  ResearchPlaybook,
+  CodePlaybook,
+  DecisionsPlaybook,
+  RebuildYourDay,
+} from './module-10'
 
 export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   // Module 1 — How AI actually works
@@ -140,13 +138,12 @@ export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   'privacy-security/vendor-terms':              VendorTerms,
   'privacy-security/aus-specific':              AusSpecific,
   'privacy-security/practical-rules':           PracticalRules,
-  // Module 10 — The playbook: source exists at ./module-10.tsx but is not
-  // wired in. Re-enable by uncommenting the imports above and these entries.
-  // 'playbook/email':     EmailPlaybook,
-  // 'playbook/meetings':  MeetingsPlaybook,
-  // 'playbook/drafting':  DraftingPlaybook,
-  // 'playbook/research':  ResearchPlaybook,
-  // 'playbook/code':      CodePlaybook,
-  // 'playbook/decisions': DecisionsPlaybook,
-  // 'playbook/rebuild':   RebuildYourDay,
+  // Module 10 — The playbook: AI in daily work
+  'playbook/email':                             EmailPlaybook,
+  'playbook/meetings':                          MeetingsPlaybook,
+  'playbook/drafting':                          DraftingPlaybook,
+  'playbook/research':                          ResearchPlaybook,
+  'playbook/code':                              CodePlaybook,
+  'playbook/decisions':                         DecisionsPlaybook,
+  'playbook/rebuild':                           RebuildYourDay,
 }
