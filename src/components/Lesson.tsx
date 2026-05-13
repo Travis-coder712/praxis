@@ -181,3 +181,22 @@ export function Aside({ title = 'Aside', children }: { title?: string; children:
     </div>
   )
 }
+
+/**
+ * PrintButton — triggers the browser's print dialog, which on every
+ * modern browser includes a "Save as PDF" destination. Paired with the
+ * @media print rules in index.css to produce a clean printable guide.
+ * Marked .no-print so it does not appear on the printed page itself.
+ */
+export function PrintButton({ label = 'Print / Save as PDF' }: { label?: string }) {
+  return (
+    <button
+      type="button"
+      onClick={() => window.print()}
+      className="no-print my-4 inline-flex items-center gap-2 rounded-lg border border-[var(--color-praxis)]/50 bg-[var(--color-praxis)]/10 px-4 py-2 text-[13px] font-semibold text-[color:var(--color-praxis)] hover:bg-[var(--color-praxis)]/20 transition-colors"
+    >
+      <span>🖨️</span>
+      <span>{label}</span>
+    </button>
+  )
+}

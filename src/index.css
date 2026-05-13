@@ -55,3 +55,53 @@ code {
 
 /* Selection */
 ::selection { background: rgba(37,99,235,0.35); color: var(--color-text); }
+
+/* Print styles — used by the "Save as PDF" button in setup guides.
+   Strips navigation/chrome, expands collapsed <details>, prints in
+   readable black-on-white so the resulting PDF is legible. */
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    background-image: none !important;
+  }
+  /* Hide app chrome — leave only the lesson content */
+  header, nav, aside, footer,
+  .no-print,
+  [data-no-print] {
+    display: none !important;
+  }
+  /* Expand collapsed sections so they print */
+  details {
+    page-break-inside: avoid;
+  }
+  details > summary {
+    display: none !important;
+  }
+  details > *:not(summary) {
+    display: block !important;
+  }
+  /* Reset cards & callouts to readable styles */
+  * {
+    color: #111 !important;
+    background-color: #fff !important;
+    border-color: #888 !important;
+    box-shadow: none !important;
+  }
+  a, a:visited {
+    color: #1d4ed8 !important;
+    text-decoration: underline;
+  }
+  pre, code {
+    border: 1px solid #ccc !important;
+    background: #f7f7f7 !important;
+    color: #111 !important;
+    page-break-inside: avoid;
+  }
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  @page {
+    margin: 18mm 16mm;
+  }
+}

@@ -193,15 +193,15 @@ export const MODULES: Module[] = [
     summary:
       'A practical playbook across the seven work activities AI most reliably accelerates: email, meetings, drafting, research, code, decisions, and learning. Live exercises throughout.',
     accent: '#84cc16',
-    status: 'built',
+    status: 'planned',
     lessons: [
-      { id: 'email',     number: 1, title: 'Email — triage, drafting, follow-up',      summary: 'The 10x leverage area for most knowledge workers.',                 readingTime: '10 min', status: 'built' },
-      { id: 'meetings',  number: 2, title: 'Meetings — prep, recap, action capture',   summary: 'Turn a 30-minute meeting into a 5-minute artifact.',                readingTime: '9 min', status: 'built' },
-      { id: 'drafting',  number: 3, title: 'Drafting — docs, slides, presentations',   summary: 'AI-as-collaborator workflows for written work.',                    readingTime: '10 min', status: 'built' },
-      { id: 'research',  number: 4, title: 'Research and synthesis',                   summary: 'Cutting through information overload.',                              readingTime: '11 min', status: 'built' },
-      { id: 'code',      number: 5, title: 'Code and spreadsheets — even for non-devs',summary: 'You don\'t need to be a developer to get value here.',              readingTime: '10 min', status: 'built' },
-      { id: 'decisions', number: 6, title: 'Decisions and critique',                   summary: 'Using AI as devil\'s advocate.',                                    readingTime: '9 min', status: 'built' },
-      { id: 'rebuild',   number: 7, title: 'Rebuild your day — capstone exercise',     summary: 'Map your typical week. Apply Praxis to it.',                        readingTime: '20 min', status: 'built' },
+      { id: 'email',     number: 1, title: 'Email — triage, drafting, follow-up',      summary: 'The 10x leverage area for most knowledge workers.',                 readingTime: '10 min', status: 'planned' },
+      { id: 'meetings',  number: 2, title: 'Meetings — prep, recap, action capture',   summary: 'Turn a 30-minute meeting into a 5-minute artifact.',                readingTime: '9 min', status: 'planned' },
+      { id: 'drafting',  number: 3, title: 'Drafting — docs, slides, presentations',   summary: 'AI-as-collaborator workflows for written work.',                    readingTime: '10 min', status: 'planned' },
+      { id: 'research',  number: 4, title: 'Research and synthesis',                   summary: 'Cutting through information overload.',                              readingTime: '11 min', status: 'planned' },
+      { id: 'code',      number: 5, title: 'Code and spreadsheets — even for non-devs',summary: 'You don\'t need to be a developer to get value here.',              readingTime: '10 min', status: 'planned' },
+      { id: 'decisions', number: 6, title: 'Decisions and critique',                   summary: 'Using AI as devil\'s advocate.',                                    readingTime: '9 min', status: 'planned' },
+      { id: 'rebuild',   number: 7, title: 'Rebuild your day — capstone exercise',     summary: 'Map your typical week. Apply Praxis to it.',                        readingTime: '20 min', status: 'planned' },
     ],
   },
 ]
