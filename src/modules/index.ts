@@ -26,6 +26,16 @@ import {
   TemplatesAndFewShot,
   PromptLibrary,
 } from './module-3'
+import {
+  WhatCopilotIs,
+  CopilotEverywhere,
+  ChatVsApp,
+  WorkVsWeb,
+  Permissions,
+  SourceDocuments,
+  CopilotAgents,
+  CopilotWorkout,
+} from './module-4'
 
 export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   // Module 1 — How AI actually works
@@ -49,4 +59,13 @@ export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   'prompting/iteration':                    Iteration,
   'prompting/templates':                    TemplatesAndFewShot,
   'prompting/prompt-library':               PromptLibrary,
+  // Module 4 — Microsoft Copilot deep dive
+  'copilot-deep-dive/what-copilot-actually-is': WhatCopilotIs,
+  'copilot-deep-dive/copilot-everywhere':       CopilotEverywhere,
+  'copilot-deep-dive/chat-vs-app':              ChatVsApp,
+  'copilot-deep-dive/work-vs-web':              WorkVsWeb,
+  'copilot-deep-dive/permissions':              Permissions,
+  'copilot-deep-dive/source-documents':         SourceDocuments,
+  'copilot-deep-dive/agents':                   CopilotAgents,
+  'copilot-deep-dive/progressive-difficulty':   CopilotWorkout,
 }
