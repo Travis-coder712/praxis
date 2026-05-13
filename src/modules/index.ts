@@ -36,6 +36,13 @@ import {
   CopilotAgents,
   CopilotWorkout,
 } from './module-4'
+import {
+  WhatClaudeIs,
+  ThreeFlavours,
+  ProjectsArtefacts,
+  LongContextUseCases,
+  TryItProjects,
+} from './module-5'
 
 export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   // Module 1 — How AI actually works
@@ -68,4 +75,10 @@ export const LESSON_RENDERERS: Record<string, () => React.ReactElement> = {
   'copilot-deep-dive/source-documents':         SourceDocuments,
   'copilot-deep-dive/agents':                   CopilotAgents,
   'copilot-deep-dive/progressive-difficulty':   CopilotWorkout,
+  // Module 5 — Claude deep dive
+  'claude-deep-dive/what-claude-is':            WhatClaudeIs,
+  'claude-deep-dive/three-flavours':            ThreeFlavours,
+  'claude-deep-dive/projects':                  ProjectsArtefacts,
+  'claude-deep-dive/long-context':              LongContextUseCases,
+  'claude-deep-dive/try-it-projects':           TryItProjects,
 }

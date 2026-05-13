@@ -108,15 +108,15 @@ export const MODULES: Module[] = [
     title: 'Claude deep dive',
     tagline: 'The model that does deep work.',
     summary:
-      'Claude.ai vs the API vs Claude Code. Projects, MCP, artefacts. Long-context use cases. Why Claude is more cautious — and when that\'s a feature.',
+      'Claude.ai vs the API vs Claude Code. Projects, MCP, artefacts. Long-context use cases. Why Claude is more cautious — and when that\'s a feature. Complement to Module 4: Copilot is your work tool; Claude is the personal tool that often wins on harder, more nuanced work.',
     accent: '#f59e0b',
-    status: 'planned',
+    status: 'built',
     lessons: [
-      { id: 'what-claude-is',  number: 1, title: 'What Claude is, and how it differs',         summary: 'Constitutional AI, the company, the model family.',                 readingTime: '7 min', status: 'planned' },
-      { id: 'three-flavours',  number: 2, title: 'Claude.ai vs Claude API vs Claude Code',     summary: 'Three different products. Different audiences. When to use each.',  readingTime: '8 min', status: 'planned' },
-      { id: 'projects',        number: 3, title: 'Projects, artefacts, and MCP',               summary: 'Claude\'s answer to "where do I keep my AI work".',                 readingTime: '10 min', status: 'planned' },
-      { id: 'long-context',    number: 4, title: 'Long-context use cases',                     summary: 'When you can paste in the whole document, what changes.',          readingTime: '8 min', status: 'planned' },
-      { id: 'try-it-projects', number: 5, title: 'Try it — build a Claude Project',            summary: 'Hands-on: set up a personal knowledge Project.',                   readingTime: '12 min', status: 'planned' },
+      { id: 'what-claude-is',  number: 1, title: 'What Claude is, and how it differs',         summary: 'Constitutional AI, the company, the model family. When Claude is genuinely the best choice — and when it isn\'t.', readingTime: '10 min', status: 'built' },
+      { id: 'three-flavours',  number: 2, title: 'Claude.ai vs Claude API vs Claude Code',     summary: 'Three different products. Different audiences. When to use each. Pricing tiers explained.', readingTime: '9 min', status: 'built' },
+      { id: 'projects',        number: 3, title: 'Projects, artefacts, and MCP',               summary: 'Persistent knowledge base, side-panel for big outputs, the connector standard. The features that turn Claude.ai from a chat to a workspace.', readingTime: '11 min', status: 'built' },
+      { id: 'long-context',    number: 4, title: 'Long-context use cases',                     summary: 'When the 200k token context window lets you paste the whole document, what changes. "Lost in the middle" and how to prompt around it.', readingTime: '10 min', status: 'built' },
+      { id: 'try-it-projects', number: 5, title: 'Try it — build a Claude Project',            summary: 'Hands-on capstone: 30 minutes to set up a personal-knowledge Project that pays back for months.', readingTime: '15 min', status: 'built' },
     ],
   },
   {
