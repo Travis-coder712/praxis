@@ -7,7 +7,7 @@
  * auto-expand when (a) the user has set their level to ≥ that tier,
  * or (b) the global "Show all" toggle is on.
  */
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useTier } from '../hooks/useTier'
 import type { Tier } from '../hooks/useTier'
 
@@ -90,10 +90,49 @@ export function TryIt({ title = 'Try it', children }: { title?: string; children
   )
 }
 
+/**
+ * Prompt — a monospace block for copy-pasteable prompts.
+ *
+ * Every Prompt now ships with a one-click copy button (top-right).
+ * The button reads textContent from the rendered block, so it works
+ * regardless of whether the children are a single template string,
+ * concatenated literals, or JSX with embedded variables. The button
+ * is .no-print so it doesn't appear in PDF exports.
+ *
+ * No per-module change is required to pick up the new button — every
+ * existing <Prompt>...</Prompt> across all 10 modules and every
+ * <TryIt> block that contains a Prompt now gets the copy affordance
+ * for free.
+ */
 export function Prompt({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [copied, setCopied] = useState(false)
+  const handleCopy = async () => {
+    const text = ref.current?.textContent ?? ''
+    try {
+      await navigator.clipboard.writeText(text.trim())
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    } catch {
+      // Older browsers / restricted contexts — silently fail.
+    }
+  }
   return (
-    <div className="my-3 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border-2)] p-3.5 text-[14px] font-mono text-[var(--color-text)] leading-relaxed whitespace-pre-wrap">
-      {children}
+    <div className="my-3 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border-2)] relative">
+      <button
+        type="button"
+        onClick={handleCopy}
+        className="no-print absolute top-2 right-2 text-[10px] uppercase font-semibold tracking-wider px-2 py-1 rounded bg-[var(--color-surface-2)] hover:bg-[var(--color-tryit)]/20 text-[var(--color-text-mute)] hover:text-[var(--color-tryit)] transition-colors"
+        aria-label="Copy prompt to clipboard"
+      >
+        {copied ? '✓ Copied' : '⧉ Copy'}
+      </button>
+      <div
+        ref={ref}
+        className="p-3.5 pr-20 text-[14px] font-mono text-[var(--color-text)] leading-relaxed whitespace-pre-wrap"
+      >
+        {children}
+      </div>
     </div>
   )
 }
