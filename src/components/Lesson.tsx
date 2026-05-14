@@ -7,6 +7,7 @@
  * auto-expand when (a) the user has set their level to ≥ that tier,
  * or (b) the global "Show all" toggle is on.
  */
+import { useState } from 'react'
 import { useTier } from '../hooks/useTier'
 import type { Tier } from '../hooks/useTier'
 
@@ -197,6 +198,92 @@ export function PrintButton({ label = 'Print / Save as PDF' }: { label?: string 
     >
       <span>🖨️</span>
       <span>{label}</span>
+    </button>
+  )
+}
+
+/**
+ * CopyablePrompt — a prompt block with a one-click copy button.
+ * Used in the Module 3 starter prompt library so users can grab any
+ * prompt into their OneNote / Notion / wherever in a single click.
+ */
+export function CopyablePrompt({
+  label,
+  children,
+}: {
+  label?: string
+  children: string
+}) {
+  const [copied, setCopied] = useState(false)
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(children)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1600)
+    } catch {
+      // Older browsers / restricted contexts — silently fail.
+    }
+  }
+  return (
+    <div className="my-3 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border-2)] relative group">
+      {label && (
+        <div className="flex items-center justify-between px-3.5 pt-3 pb-1">
+          <p className="text-[10px] uppercase font-semibold tracking-wider text-[var(--color-text-mute)]">
+            {label}
+          </p>
+        </div>
+      )}
+      <button
+        type="button"
+        onClick={handleCopy}
+        className="no-print absolute top-2 right-2 text-[10px] uppercase font-semibold tracking-wider px-2 py-1 rounded bg-[var(--color-surface-2)] hover:bg-[var(--color-tryit)]/20 text-[var(--color-text-mute)] hover:text-[var(--color-tryit)] transition-colors"
+        aria-label="Copy prompt to clipboard"
+      >
+        {copied ? '✓ Copied' : '⧉ Copy'}
+      </button>
+      <pre className="px-3.5 pb-3.5 pt-2 text-[13px] font-mono text-[var(--color-text)] leading-relaxed whitespace-pre-wrap">{children}</pre>
+    </div>
+  )
+}
+
+/**
+ * CopyAllPrompts — a single button that concatenates a collection of
+ * labelled prompts into a markdown-style blob and copies them to the
+ * clipboard. Designed so a reader can paste the whole library into
+ * OneNote / Notion / a text file in one go.
+ */
+export function CopyAllPrompts({
+  prompts,
+  label = '⧉ Copy ALL prompts (paste into OneNote)',
+}: {
+  prompts: { heading: string; body: string }[]
+  label?: string
+}) {
+  const [copied, setCopied] = useState(false)
+  const handleCopy = async () => {
+    const blob = prompts
+      .map(p => `## ${p.heading}\n\n${p.body}\n`)
+      .join('\n---\n\n')
+    const header =
+      '# Praxis Starter Prompt Library\n\n' +
+      'Pasted from https://travis-coder712.github.io/praxis/ — Module 3 Lesson 6.\n' +
+      `Generated: ${new Date().toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })}\n\n` +
+      '---\n\n'
+    try {
+      await navigator.clipboard.writeText(header + blob)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2200)
+    } catch {
+      // silent fail
+    }
+  }
+  return (
+    <button
+      type="button"
+      onClick={handleCopy}
+      className="no-print my-4 inline-flex items-center gap-2 rounded-lg border-2 border-[var(--color-tryit)] bg-[var(--color-tryit)]/15 px-4 py-2.5 text-[13px] font-bold text-[color:var(--color-tryit)] hover:bg-[var(--color-tryit)]/25 transition-colors"
+    >
+      <span>{copied ? '✓ Copied — paste into OneNote now' : label}</span>
     </button>
   )
 }

@@ -10,8 +10,429 @@ import {
   P, H2, H3, Em, UL, OL,
   BeginnerSection, LevelUp,
   TryIt, Prompt,
-  DeeperDive, KeyCallout,
+  DeeperDive, KeyCallout, Aside,
+  CopyablePrompt, CopyAllPrompts,
 } from '../components/Lesson'
+
+// ============================================================
+// Starter Prompt Library — exported as a constant so the same
+// content can be rendered into individual <CopyablePrompt /> blocks
+// AND fed into <CopyAllPrompts /> for a one-shot OneNote dump.
+// ============================================================
+// Each prompt is deliberately short, self-contained, and uses
+// [SQUARE BRACKET PLACEHOLDERS] for the parts the user fills in.
+// Categories follow the Module 10 playbook structure so the
+// library is useful immediately after Module 3.
+
+const STARTER_PROMPTS: { category: string; items: { heading: string; body: string }[] }[] = [
+  {
+    category: 'Defaults — paste at the top of every new chat',
+    items: [
+      {
+        heading: 'No-glaze defaults',
+        body: `Before we start, three defaults for this whole conversation:
+
+1. Be concise. No opening pleasantries, no closing "let me know if you need more". Go straight to the answer.
+2. If anything I ask is ambiguous, ask one clarifying question before answering. Do not guess.
+3. If you don't know something, say so. Do not fabricate facts, citations, or numbers.
+
+Australian English. UTC+10 / +11. If you give a date, use the format "14 May 2026".`,
+      },
+      {
+        heading: 'Format defaults',
+        body: `When I ask for analysis, use this structure:
+
+- Bottom line first (one sentence)
+- Three bullets supporting it
+- One caveat or thing you might be wrong about
+
+When I ask for a draft, give me a clean draft only — no preamble explaining what you wrote.`,
+      },
+    ],
+  },
+  {
+    category: 'Email',
+    items: [
+      {
+        heading: 'Email thread triage',
+        body: `Read this email thread. In four bullets, tell me:
+
+1. Who is asking for what?
+2. What action do they need from me?
+3. What's the deadline (explicit or implicit)?
+4. Who has decision authority on this — me or someone else?
+
+If anything is ambiguous, flag it. Don't fill gaps with assumptions.
+
+[paste thread]`,
+      },
+      {
+        heading: 'Draft a reply',
+        body: `Draft a reply to the thread below.
+
+Context about me:
+- My role: [role]
+- My relationship to the recipient: [colleague / vendor / client / boss]
+
+What I want the reply to do:
+- Outcome: [agree to meet / push back politely / ask for more info / close the loop]
+- Tone: [warm / formal / brief]
+- Length: [two short paragraphs / four sentences / one paragraph]
+
+Things to include:
+- [point 1]
+- [point 2]
+
+Things NOT to include:
+- [anything sensitive]
+
+[paste thread]`,
+      },
+      {
+        heading: 'Soften this without losing the message',
+        body: `Rewrite the message below so it lands the same point but reads more warmly. Do not weaken the underlying ask or commitment. Cut hedging that adds no value.
+
+[paste message]`,
+      },
+      {
+        heading: 'End-of-week follow-up scan',
+        body: `Across these threads, identify:
+
+1. Questions I was asked that I haven't answered.
+2. Actions I committed to that I haven't done.
+3. Decisions I asked someone else for that I haven't received.
+4. Anything that has gone quiet that probably shouldn't have.
+
+For each, suggest one short action.
+
+[paste threads]`,
+      },
+    ],
+  },
+  {
+    category: 'Meetings',
+    items: [
+      {
+        heading: 'Meeting prep — 60 seconds',
+        body: `I have a meeting coming up. From the description below, give me:
+
+1. ATTENDEES & ANGLE — for each named attendee, one sentence on their likely focus or priorities.
+2. THREE QUESTIONS TO BE READY FOR — the sharpest questions I should have an answer for.
+3. ONE THING TO BRING — a number, a one-pager, or a recent example.
+
+[paste meeting description, invite, or context]`,
+      },
+      {
+        heading: 'Meeting recap from notes',
+        body: `Turn the meeting notes below into four short sections:
+
+1. DECISIONS MADE — bullets, one per decision, plus who made it.
+2. ACTIONS — bullets, in the format "[person] will [do thing] by [date]".
+3. OPEN QUESTIONS — bullets, things that weren't resolved.
+4. KEY CONTEXT — two or three sentences capturing the rationale.
+
+Be precise. If an action lacks a date, mark it [no date set].
+
+[paste notes]`,
+      },
+      {
+        heading: '1:1 prep (for managers)',
+        body: `My direct report's recent updates are below. Suggest three things to discuss in our next 1:1:
+
+1. One thing to acknowledge or celebrate.
+2. One thing to pull on / probe more.
+3. One thing that might be worth raising before they raise it.
+
+Keep it short. Don't moralise.
+
+[paste recent updates / status / messages]`,
+      },
+    ],
+  },
+  {
+    category: 'Writing & drafting',
+    items: [
+      {
+        heading: 'Outline a memo / paper',
+        body: `I need to write a [document type — board paper / strategy memo / project plan].
+
+Audience: [who reads this]
+Purpose: [what decision or action it should support]
+Length: [target word count or page count]
+Tone: [formal / friendly / direct]
+
+Give me an outline only — headings and one-sentence summaries of what each section will cover. Do NOT write the sections yet.
+
+The core message in two sentences: [your core message]
+Context the reader already has: [what they know]
+Context they will NOT have: [what you'll need to explain]`,
+      },
+      {
+        heading: 'Expand a section from an outline',
+        body: `Expand the section titled "[section heading]" into [number] paragraphs.
+
+Tone: [tone]
+Avoid: [jargon to avoid / things that would be wrong]
+
+Include:
+- [point 1]
+- [point 2]
+
+Write a strong first draft I'll edit. Do not try to be perfect.`,
+      },
+      {
+        heading: 'Tough-editor critique pass',
+        body: `Critique this draft as a skeptical senior reviewer. You're not here to be encouraging.
+
+Find:
+1. The three weakest sections, and why each is weak.
+2. Any claim that should have a citation but doesn't.
+3. Any sentence that sounds confident but is actually a guess.
+4. The single most important thing the draft is missing.
+
+Be specific. Use quotes from the draft to anchor each criticism.
+
+[paste full draft]`,
+      },
+      {
+        heading: '"Sounds like AI" detector',
+        body: `Read this draft and find every passage that sounds like it was written by AI. Specifically:
+
+- Generic openers ("In today's fast-paced world...")
+- Empty hedging phrases that add no information
+- "Furthermore", "Moreover", "It is important to note"
+- Symmetric three-part lists used for cosmetic effect
+- Closing summaries that just repeat what was already said
+
+For each, quote it and suggest a sharper alternative.
+
+[paste draft]`,
+      },
+      {
+        heading: 'Convert prose to bullets (or vice versa)',
+        body: `Convert the [prose / bulleted] text below into [bullets / flowing prose].
+
+Keep the same level of detail. If converting to bullets, use parallel grammatical structure. If converting to prose, vary sentence length and avoid starting each sentence the same way.
+
+[paste content]`,
+      },
+    ],
+  },
+  {
+    category: 'Research & synthesis',
+    items: [
+      {
+        heading: 'Scope a topic',
+        body: `I need to get up to speed on [topic] for [purpose, audience, time horizon].
+
+I currently know roughly [your current understanding in one paragraph].
+
+Give me:
+1. The three to five sub-topics I need to understand.
+2. The two or three dominant schools of thought, briefly.
+3. The two or three things that are still genuinely contested.
+4. What would I be embarrassed not to know going into a conversation with an expert?
+5. Three searches I should run to get concrete sources.
+
+Don't try to teach me everything. Give me the map.`,
+      },
+      {
+        heading: 'Compare options',
+        body: `I'm choosing between [Option A] and [Option B] for [purpose].
+
+For each option give me:
+- The strongest argument for it
+- The strongest argument against it
+- The one thing I'd need to verify to be confident in it
+
+Then tell me which option you'd pick if you had to choose today, and the one piece of information that would flip your answer.`,
+      },
+      {
+        heading: 'Source-anchored summary',
+        body: `Read the sources I've pasted below and produce a one-page synthesis.
+
+Structure:
+- Two sentences setting up the question.
+- The three most important things the sources agree on (with which sources said each).
+- The two or three things where the sources disagree, and on what specifically.
+- The single most important thing a senior reader would want me to know.
+- What I'm probably missing — what the sources implicitly assume but don't spell out.
+
+Cite source by name inline. Do not invent facts.
+
+[paste sources]`,
+      },
+      {
+        heading: 'What am I missing?',
+        body: `Below is my current understanding of [topic / situation / decision].
+
+Read it as a thoughtful outsider. Tell me:
+1. What's the strongest counter-argument to my framing?
+2. What assumption am I making that might not be true?
+3. What's the question I should be asking that I'm not?
+4. If a senior person disagreed with my conclusion, what would they say?
+
+Be direct. I don't need balance; I need a sharper read.
+
+[paste your current view]`,
+      },
+    ],
+  },
+  {
+    category: 'Decisions',
+    items: [
+      {
+        heading: "Devil's advocate",
+        body: `I'm leaning towards the following decision: [state the decision in one sentence].
+
+My reasoning is:
+- [reason 1]
+- [reason 2]
+- [reason 3]
+
+I'd like you to argue against this decision. Be specific. Don't give me balanced "considerations" — give me the case that I'm wrong.
+
+Specifically:
+1. What's the strongest counter-argument to my reasoning?
+2. What am I assuming that might not be true?
+3. What's the most likely way this decision turns out badly in 6–12 months?
+4. What question should I be asking that I'm not?
+
+Be direct.`,
+      },
+      {
+        heading: 'Pre-mortem',
+        body: `Imagine it is six months from now. We made the following decision: [the decision].
+
+It has gone badly. Write a one-paragraph post-mortem describing:
+- What specifically went wrong.
+- The warning signs we missed at the time.
+- The assumption that turned out to be incorrect.
+- The cheapest thing we could have done at the time of the decision to reduce this risk.
+
+Don't be balanced. Imagine the worst plausible outcome and reason backwards.`,
+      },
+      {
+        heading: 'Frame-check',
+        body: `Here is how I'm currently framing a decision:
+
+[describe the decision and how you're currently thinking about it, including the alternatives you're choosing between]
+
+Step back and identify:
+1. What's the implicit framing here?
+2. Are there alternatives I'm not considering because of how I've framed it?
+3. Am I solving the right problem, or have I narrowed the question prematurely?
+4. If a thoughtful outsider with no stake in this looked at the same situation, how might they describe the choice differently?`,
+      },
+    ],
+  },
+  {
+    category: 'Data, Excel, small tools',
+    items: [
+      {
+        heading: 'Excel formula generator',
+        body: `I have a spreadsheet with these columns:
+- A: [description]
+- B: [description]
+- C: [description]
+... etc.
+
+I want to: [describe what you want to compute, in plain English].
+
+Give me an Excel formula that does this. Explain in one sentence what each part of the formula does, so I can adapt it later.
+
+If there's a simpler way using a different Excel feature (pivot table, Power Query, etc.), tell me that instead.`,
+      },
+      {
+        heading: 'Explain this formula',
+        body: `Explain what this Excel / Google Sheets formula does, in plain English, like I'm a smart non-developer.
+
+Walk through it left-to-right. Point out the part most likely to break if I copy-paste it somewhere else.
+
+[paste formula]`,
+      },
+      {
+        heading: 'Power Query for repetitive cleanup',
+        body: `I do the following data cleanup every [month / week], by hand:
+
+1. [step 1]
+2. [step 2]
+3. [step 3]
+
+This takes me [N] minutes each time.
+
+Write me a Power Query (M code) that does this automatically. Include comments explaining each step so I can adjust if the source data changes.
+
+Source data sample (names changed): [paste a small example]`,
+      },
+    ],
+  },
+  {
+    category: 'Status updates & one-pagers',
+    items: [
+      {
+        heading: 'Weekly status update',
+        body: `Below are my notes from this week. Produce a four-section status update:
+
+1. WHAT GOT DONE — bullets, concrete, names and numbers where relevant.
+2. WHAT'S IN FLIGHT — bullets, with the next step and expected date.
+3. WHERE I'M STUCK — anything I need help with or a decision on.
+4. NEXT WEEK — three priorities, in order.
+
+Keep it short. The whole thing should fit on a single screen.
+
+[paste week's notes]`,
+      },
+      {
+        heading: 'One-pager from a longer document',
+        body: `Read the document below and produce a one-pager.
+
+Sections:
+- TL;DR (two sentences)
+- Key points (max five bullets, in priority order)
+- Open questions (max three)
+- What the reader should do after reading
+
+Cut every sentence that doesn't move the reader's decision forward.
+
+[paste document]`,
+      },
+      {
+        heading: 'Board-ready talking points',
+        body: `Convert the document below into talking points for a [board / steering committee / leadership] discussion.
+
+For each major point:
+- One sentence stating it.
+- One number that supports it (or "[verify]" if I need to find one).
+- One question the audience is likely to ask.
+
+Keep the tone neutral and executive. Don't editorialise.
+
+[paste document]`,
+      },
+    ],
+  },
+  {
+    category: 'Learning & personal',
+    items: [
+      {
+        heading: 'Explain X like I have Y background',
+        body: `Explain [concept / paper / framework] to me.
+
+My current background: [your context — e.g. "MBA but no engineering" or "data analyst with no economics"].
+
+What I want to understand specifically: [your real question, not a generic "explain X"].
+
+Use one analogy I'd find natural given my background. Then a worked example. Then the one thing I'm most likely to get wrong if I tried to use this myself.`,
+      },
+    ],
+  },
+]
+
+// Flattened list of just the prompts (for CopyAllPrompts)
+const STARTER_PROMPTS_FLAT = STARTER_PROMPTS.flatMap(c =>
+  c.items.map(i => ({ heading: `${c.category} — ${i.heading}`, body: i.body }))
+)
 
 // ============================================================
 // Lesson 3.1 — Anatomy of a good prompt
@@ -1010,6 +1431,81 @@ export function PromptLibrary() {
             real productivity multiplier.
           </P>
         </TryIt>
+
+        <H2>Starter kit — set up OneNote + 25 ready-to-paste prompts</H2>
+        <P>
+          The section below is designed to be the fastest possible "from zero to a working prompt
+          library." Step-by-step OneNote setup, then a curated starter set of {STARTER_PROMPTS_FLAT.length} prompts
+          you can paste in directly. Each prompt has a one-click copy button; there's also a
+          "copy everything" button at the bottom that dumps the whole library to your clipboard
+          formatted for OneNote.
+        </P>
+
+        <H3>Why OneNote (and what to do if you don't have it)</H3>
+        <P>
+          For most working professionals on Microsoft 365, OneNote is the right tool: it syncs to
+          OneDrive automatically (phone, desktop, web all stay in step), it's already part of your
+          enterprise data plane, and it's free with your work licence. The setup below assumes
+          OneNote — but if you prefer a different tool, the same structure works in:
+        </P>
+        <UL items={[
+          <><Em>Notion</Em> — a database with category tags works beautifully.</>,
+          <><Em>Apple Notes</Em> — folders + the search bar; simple and fast.</>,
+          <><Em>A plain text file in OneDrive / iCloud</Em> — surprisingly hard to beat.</>,
+          <><Em>Claude Projects or a Custom GPT</Em> — keeps the prompts inside the tool you'll use them in (covered in Modules 5 and 8).</>,
+        ]} />
+
+        <H3>OneNote setup — five minutes, do it now</H3>
+        <OL items={[
+          <>Open OneNote. On Windows: from the Start menu or via Outlook → OneNote icon. On Mac: from Launchpad, or use the web version at <code>onenote.com</code>. Sign in with your work account if you haven't already.</>,
+          <>In the left pane, click <Em>+ Add Notebook</Em>. Name it <code>AI Prompts</code>. (If your IT team has restricted creating new notebooks, just use a section in your existing personal notebook — works the same.)</>,
+          <>Inside the notebook, you'll see one default section. Rename it <code>Library</code>.</>,
+          <>Create one page per category by clicking <Em>+ Page</Em> on the right. Suggested pages: <code>Defaults</code>, <code>Email</code>, <code>Meetings</code>, <code>Writing</code>, <code>Research</code>, <code>Decisions</code>, <code>Data & Excel</code>, <code>Status updates</code>, <code>Learning</code>.</>,
+          <>On each page, paste the prompts from the matching section below. Use Ctrl+V (Cmd+V on Mac). OneNote preserves the line breaks but loses the monospace styling — that's fine.</>,
+          <>Pin the notebook to your <Em>Home</Em> or favourites. In the OneNote desktop app: right-click the notebook → <Em>Pin to Home</Em>. In the web app: click the star.</>,
+          <>OneNote auto-syncs via OneDrive. Open it on your phone and the prompts are there too — useful when you're drafting on the go.</>,
+          <>Optional but recommended: in the OneNote ribbon, use the <Em>Tag</Em> menu to mark your most-used prompts with the ⭐ tag. Use the <Em>Find Tags</Em> button (Home tab) to filter the whole notebook to just your favourites later.</>,
+        ]} />
+
+        <Aside title="If you use Copilot in OneNote">
+          Copilot can read across all pages in the notebook. Once your library is set up, try
+          asking Copilot directly: <Em>"Suggest which of my saved prompts I should use to draft a
+          reply to this email"</Em> — it'll pick from your library instead of generating from
+          scratch. The library compounds: each prompt you save becomes input for Copilot's
+          future suggestions to you.
+        </Aside>
+
+        <H3>The 25 starter prompts</H3>
+        <P>
+          Hit the copy button on any prompt to grab just that one. Or scroll to the bottom and
+          use the <Em>Copy ALL</Em> button to dump the whole library to your clipboard in one
+          go — it pastes into OneNote (or anywhere) as a tidy markdown-style document with
+          headings, ready to split across pages.
+        </P>
+
+        <CopyAllPrompts prompts={STARTER_PROMPTS_FLAT} />
+
+        {STARTER_PROMPTS.map((cat) => (
+          <div key={cat.category} className="my-6">
+            <H3>{cat.category}</H3>
+            {cat.items.map((it) => (
+              <CopyablePrompt key={it.heading} label={it.heading}>
+                {it.body}
+              </CopyablePrompt>
+            ))}
+          </div>
+        ))}
+
+        <CopyAllPrompts prompts={STARTER_PROMPTS_FLAT} label="⧉ Copy ALL prompts again (in case you've scrolled this far)" />
+
+        <KeyCallout title="What to do once it's set up">
+          You now have a library of {STARTER_PROMPTS_FLAT.length} prompts curated to cover most knowledge work. The
+          next step is to make them <Em>yours</Em>: every time you use one, watch what works and
+          what you have to tweak. After three weeks, the version of each prompt in your library
+          should look noticeably different from the starter — because you've adapted it to your
+          voice, your audience, and your real tasks. That's the moment the library starts
+          compounding.
+        </KeyCallout>
       </BeginnerSection>
 
       <LevelUp tier="intermediate">
