@@ -957,8 +957,8 @@ export function TryItProjects() {
         <P>The mistake most first-time Project builders make is picking too broad a scope ("all my work") or too narrow ("just this one document"). The sweet spot:</P>
         <UL items={[
           <>One ongoing work area — a project, a client, a learning topic, a domain.</>,
-          <>You\'ll do at least 5-10 hours of work on it over the next month.</>,
-          <>There\'s enough reference material to justify the upload but not so much that it overflows context.</>,
+          <>You'll do at least 5-10 hours of work on it over the next month.</>,
+          <>There's enough reference material to justify the upload but not so much that it overflows context.</>,
         ]} />
         <P>Good first-Project candidates:</P>
         <UL items={[
@@ -986,15 +986,15 @@ export function TryItProjects() {
         <P>This is the most important step. The Project Instructions are your standing system prompt for every conversation in the Project. Quality here pays back many times over.</P>
         <P>A solid template:</P>
         <Prompt>
-          Role: You\'re my [specific role for this project — e.g., "research partner on Q3 strategy", "drafting partner who writes in my voice", "tough editor on my client work"].
+          Role: You're my [specific role for this project — e.g., "research partner on Q3 strategy", "drafting partner who writes in my voice", "tough editor on my client work"].
 
           Sources: The documents in Project knowledge are the authoritative source for [topic]. When you reference them, mention which document the information came from.
 
           Output discipline:
           - Skip the introduction. Start with the answer.
-          - Be matter-of-fact. Don\'t be effusive.
-          - Push back if I\'m wrong. Don\'t agree to be helpful.
-          - If you don\'t know, say so. Don\'t speculate.
+          - Be matter-of-fact. Don't be effusive.
+          - Push back if I'm wrong. Don't agree to be helpful.
+          - If you don't know, say so. Don't speculate.
           - Use plain language. Avoid corporate-speak.
 
           Specific constraints for this project:
@@ -1006,9 +1006,9 @@ export function TryItProjects() {
         <P>Now you have a real working Project. The first conversation to run:</P>
         <Prompt>
           Read everything in Project knowledge. Then give me:
-          1. One paragraph: what we\'re working on, in plain English.
-          2. Three open questions I haven\'t answered.
-          3. The single most important thing I\'m probably under-weighting.
+          1. One paragraph: what we're working on, in plain English.
+          2. Three open questions I haven't answered.
+          3. The single most important thing I'm probably under-weighting.
           4. Two things to do next.
 
           Cite which documents each point draws from.
@@ -1023,7 +1023,7 @@ export function TryItProjects() {
         </KeyCallout>
 
         <TryIt>
-          <P>Build the Project now. Don\'t read further first. The lesson is in the doing.</P>
+          <P>Build the Project now. Don't read further first. The lesson is in the doing.</P>
           <OL items={[
             'Pick the topic.',
             'Gather and upload materials.',
@@ -1031,13 +1031,13 @@ export function TryItProjects() {
             'Run the first useful conversation.',
             'Bookmark the Project. Use it for the next two weeks instead of starting plain chats for this work.',
           ]} />
-          <P>Come back to read the Level Up sections after you\'ve built one. They\'ll make more sense with concrete experience.</P>
+          <P>Come back to read the Level Up sections after you've built one. They'll make more sense with concrete experience.</P>
         </TryIt>
       </BeginnerSection>
 
       <LevelUp tier="intermediate">
         <H3>Project hygiene — keeping it useful</H3>
-        <P>Projects degrade over time if you don\'t maintain them. Three habits:</P>
+        <P>Projects degrade over time if you don't maintain them. Three habits:</P>
         <UL items={[
           <><Em>Re-upload changed documents</Em>. If a strategy doc gets revised, replace the old version in Project knowledge. Otherwise Claude works with stale material.</>,
           <><Em>Refine the instructions monthly</Em>. As your understanding of what works grows, tighten the instructions. The Project gets sharper.</>,
@@ -1067,7 +1067,7 @@ export function TryItProjects() {
           'A "current client X" Project that everyone working on it shares.',
         ]} />
         <P>
-          Most teams using Claude Team haven\'t set this up yet. It's one of the highest-leverage moves
+          Most teams using Claude Team haven't set this up yet. It's one of the highest-leverage moves
           a team leader can make if you have the tier.
         </P>
 
@@ -1089,7 +1089,7 @@ export function TryItProjects() {
       <LevelUp tier="advanced">
         <H3>Project as personal AI infrastructure</H3>
         <P>
-          The way to think about Projects long-term: they\'re your personal AI infrastructure. After a
+          The way to think about Projects long-term: they're your personal AI infrastructure. After a
           year of disciplined use, you might have 10-15 active Projects covering:
         </P>
         <UL items={[
@@ -1101,7 +1101,7 @@ export function TryItProjects() {
         ]} />
         <P>
           The infrastructure compounds. Three years in, your Projects represent more thinking about how
-          you work than you\'d have done explicitly. They become a kind of externalised cognition.
+          you work than you'd have done explicitly. They become a kind of externalised cognition.
         </P>
 
         <H3>Project instructions vs Claude API system prompts</H3>
@@ -1133,12 +1133,12 @@ export function TryItProjects() {
 
         <KeyCallout title="End of Module 5">
           You now know what Claude is, how it differs from ChatGPT and Copilot, which of its three
-          flavours fits which job, what Projects / Artefacts / MCP do, and how to use long context. You\'ve
+          flavours fits which job, what Projects / Artefacts / MCP do, and how to use long context. You've
           built at least one Project.
           <br /><br />
-          Module 6 covers Claude Code — the third flavour, and the most powerful. It\'s where Claude
+          Module 6 covers Claude Code — the third flavour, and the most powerful. It's where Claude
           stops being a chat partner and becomes a working agent on your filesystem. Different audience,
-          different skill prerequisite, different superpower. Worth understanding even if you don\'t
+          different skill prerequisite, different superpower. Worth understanding even if you don't
           immediately use it — because Claude Code is the pattern that underpins the next generation of
           AI tools.
         </KeyCallout>

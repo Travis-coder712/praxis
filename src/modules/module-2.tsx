@@ -755,7 +755,7 @@ export function SideBySide() {
         <H2>The setup</H2>
         <P>You need three browser tabs open:</P>
         <OL items={[
-          <><Em>Copilot Chat</Em> (via the M365 portal or Edge sidebar). Make sure you\'re in <Em>Web mode</Em> for fair comparison — not work-data mode.</>,
+          <><Em>Copilot Chat</Em> (via the M365 portal or Edge sidebar). Make sure you're in <Em>Web mode</Em> for fair comparison — not work-data mode.</>,
           <><Em>Claude.ai</Em> (free account at claude.ai). Note the model version.</>,
           <><Em>Gemini</Em> (free account at gemini.google.com). Note the model version.</>,
         ]} />
@@ -768,7 +768,7 @@ export function SideBySide() {
 
         <H3>Prompt 1 — the writing test</H3>
         <Prompt>
-          Write a one-paragraph email to my team telling them we\'re moving offices in three weeks. Keep it
+          Write a one-paragraph email to my team telling them we're moving offices in three weeks. Keep it
           warm but professional. Do not use the words "excited", "journey", or "thrilled".
         </Prompt>
         <P>
@@ -778,7 +778,7 @@ export function SideBySide() {
 
         <H3>Prompt 2 — the analytical test</H3>
         <Prompt>
-          What\'s the case for and the case against working from the office five days a week, for a
+          What's the case for and the case against working from the office five days a week, for a
           knowledge-work company in 2026? Give me the strongest version of each side.
         </Prompt>
         <P>
@@ -812,7 +812,7 @@ export function SideBySide() {
         <H3>Prompt 5 — the critique-yourself test</H3>
         <Prompt>
           Make the strongest possible case against using AI in business decisions. Be persuasive, specific,
-          and use real examples. Don\'t hedge.
+          and use real examples. Don't hedge.
         </Prompt>
         <P>
           What to look for: which model was actually willing to argue strongly against AI? Which one
@@ -842,7 +842,7 @@ export function SideBySide() {
             | TOTAL             |  /25    |  /25   |  /25   |   /25     |        |
           </Prompt>
           <P>
-            Total each column. The model with the highest total isn\'t "the best AI" — it\'s the one best
+            Total each column. The model with the highest total isn't "the best AI" — it's the one best
             suited to <em>these five prompts</em>. Run different prompts and you may get a different winner.
             That's the whole point.
           </P>

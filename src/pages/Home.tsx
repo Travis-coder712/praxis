@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom'
 import { MODULES, totalLessons, builtLessons } from '../data/curriculum'
+import { useProgress } from '../hooks/useProgress'
 
 export default function Home() {
+  const { isComplete, count, reset } = useProgress()
+  const built = builtLessons()
+  const overallPct = built > 0 ? (count / built) * 100 : 0
+
   return (
     <div className="max-w-5xl mx-auto px-5 lg:px-8 py-12">
       {/* Hero */}
@@ -31,9 +36,45 @@ export default function Home() {
           </div>
           <div className="px-3 py-2 rounded-lg bg-[var(--color-praxis)]/10 border border-[var(--color-praxis)]/30">
             <span className="text-[var(--color-text-mute)]">Built so far:</span>{' '}
-            <span className="text-[var(--color-praxis-2)] font-semibold">{builtLessons()}</span>
+            <span className="text-[var(--color-praxis-2)] font-semibold">{built}</span>
           </div>
+          {count > 0 && (
+            <div className="px-3 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
+              <span className="text-[var(--color-text-mute)]">You've read:</span>{' '}
+              <span className="text-emerald-400 font-semibold">{count}</span>
+              <span className="text-[var(--color-text-mute)]"> / {built}</span>
+            </div>
+          )}
         </div>
+
+        {/* Overall progress bar — only shown once user has marked at least one lesson */}
+        {count > 0 && (
+          <div className="mt-5 max-w-2xl">
+            <div className="flex items-center justify-between mb-1.5 text-xs">
+              <span className="text-[var(--color-text-mute)] font-medium">Your overall progress</span>
+              <span className="font-mono text-[var(--color-text-dim)]">
+                {overallPct.toFixed(0)}%
+                <button
+                  onClick={() => {
+                    if (window.confirm('Reset all read-progress? This cannot be undone.')) reset()
+                  }}
+                  className="ml-3 text-[var(--color-text-mute)] hover:text-[var(--color-praxis)] underline"
+                >
+                  Reset
+                </button>
+              </span>
+            </div>
+            <div className="h-1.5 rounded-full bg-[var(--color-surface-2)] overflow-hidden">
+              <div
+                className="h-full bg-gradient-to-r from-emerald-500 to-emerald-400 transition-all duration-300"
+                style={{ width: `${overallPct}%` }}
+              />
+            </div>
+            <p className="text-[10px] text-[var(--color-text-mute)] mt-1.5 italic">
+              Progress is stored in your browser only — it stays on this device.
+            </p>
+          </div>
+        )}
 
         <div className="mt-8 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/60 p-5 text-sm text-[var(--color-text-dim)] leading-relaxed">
           <p className="text-[var(--color-text)] font-semibold mb-2">How to use Praxis</p>
@@ -58,29 +99,43 @@ export default function Home() {
         <div className="space-y-3">
           {MODULES.map(m => {
             const isBuilt = m.status === 'built'
-            const lessonsBuilt = m.lessons.filter(l => l.status === 'built').length
+            const builtLessonsList = m.lessons.filter(l => l.status === 'built')
+            const lessonsBuilt = builtLessonsList.length
+            const lessonsRead = builtLessonsList.filter(l => isComplete(`${m.id}/${l.id}`)).length
+            const moduleComplete = lessonsBuilt > 0 && lessonsRead === lessonsBuilt
             const card = (
               <div
                 className={`group rounded-xl border p-5 transition-all ${
                   isBuilt
-                    ? 'bg-[var(--color-surface)] border-[var(--color-border)] hover:border-[var(--color-praxis)]/50 hover:bg-[var(--color-surface-2)] cursor-pointer'
+                    ? moduleComplete
+                      ? 'bg-emerald-500/5 border-emerald-500/30 hover:border-emerald-500/50 cursor-pointer'
+                      : 'bg-[var(--color-surface)] border-[var(--color-border)] hover:border-[var(--color-praxis)]/50 hover:bg-[var(--color-surface-2)] cursor-pointer'
                     : 'bg-[var(--color-surface)]/40 border-dashed border-[var(--color-border)]'
                 }`}
                 style={{ borderLeftWidth: 4, borderLeftColor: m.accent }}
               >
                 <div className="flex items-start gap-4">
                   <div
-                    className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-sm font-bold mt-0.5"
-                    style={{ background: `${m.accent}22`, color: m.accent }}
+                    className={`flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-sm font-bold mt-0.5 ${
+                      moduleComplete ? 'text-white' : ''
+                    }`}
+                    style={moduleComplete
+                      ? { background: '#10b981' }
+                      : { background: `${m.accent}22`, color: m.accent }
+                    }
                   >
-                    {m.number}
+                    {moduleComplete ? '✓' : m.number}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-baseline gap-2 flex-wrap mb-1">
                       <h3 className={`text-lg font-semibold tracking-tight ${isBuilt ? 'text-[var(--color-text)]' : 'text-[var(--color-text-dim)]'}`}>
                         {m.title}
                       </h3>
-                      {isBuilt ? (
+                      {moduleComplete ? (
+                        <span className="text-[10px] font-bold uppercase tracking-[0.1em] px-1.5 py-0.5 rounded text-emerald-400 bg-emerald-500/15">
+                          ✓ Complete
+                        </span>
+                      ) : isBuilt ? (
                         <span className="text-[10px] font-bold uppercase tracking-[0.1em] px-1.5 py-0.5 rounded text-[var(--color-beginner)] bg-[var(--color-beginner)]/15">
                           Live
                         </span>
@@ -93,7 +148,13 @@ export default function Home() {
                     <p className="text-sm text-[var(--color-text-dim)] mb-2 italic">{m.tagline}</p>
                     <p className="text-sm text-[var(--color-text-dim)] leading-relaxed">{m.summary}</p>
                     <p className="text-xs text-[var(--color-text-mute)] mt-3 font-mono">
-                      {m.lessons.length} lessons{isBuilt ? ` · ${lessonsBuilt} ready` : ''}
+                      {m.lessons.length} lessons
+                      {isBuilt && ` · ${lessonsBuilt} ready`}
+                      {isBuilt && lessonsRead > 0 && (
+                        <span className="text-emerald-400">
+                          {' '}· {lessonsRead}/{lessonsBuilt} read
+                        </span>
+                      )}
                     </p>
                   </div>
                 </div>

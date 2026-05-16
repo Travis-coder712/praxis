@@ -491,7 +491,7 @@ export function AnatomyOfAPrompt() {
           are being reduced by 20% due to a missed revenue target. Keep it under 200 words. Be direct, not
           apologetic. Don't use "journey" or "exciting opportunity".
 
-          Here\'s an example of the tone I want, from a different topic:
+          Here's an example of the tone I want, from a different topic:
 
           "Team — I want to flag something before it lands in the all-hands tomorrow. We're closing the
           Sydney office at the end of the quarter. This will affect five roles, all of whom I'll meet
@@ -531,7 +531,7 @@ export function AnatomyOfAPrompt() {
           <><Em>Role matters most</Em> when the task has a specific professional flavour — legal, medical, technical, accounting. ("You're a partner at a Big 4 audit firm reviewing this financial statement…")</>,
           <><Em>Context matters most</Em> when the AI can't otherwise infer the situation — internal politics, specific people, recent events. The more you tell, the better the output.</>,
           <><Em>Constraints matter most</Em> when you've previously got something you didn't want — too long, too formal, too sales-y, too apologetic. Constraints are how you fix that for next time.</>,
-          <><Em>Examples matter most</Em> when the style is hard to describe in words. "Write like our CEO" → useless. Three of the CEO\'s actual emails → instantly clear.</>,
+          <><Em>Examples matter most</Em> when the style is hard to describe in words. "Write like our CEO" → useless. Three of the CEO's actual emails → instantly clear.</>,
         ]} />
 
         <H3>The structure that works for most prompts</H3>
@@ -652,7 +652,7 @@ export function Personas() {
 
         <H2>When personas genuinely help</H2>
         <UL items={[
-          <><Em>The task has professional structure.</Em> Lawyers don\'t write like marketers. Auditors don't write like product managers. Setting the persona shifts vocabulary, tone, and the kind of considerations the model surfaces.</>,
+          <><Em>The task has professional structure.</Em> Lawyers don't write like marketers. Auditors don't write like product managers. Setting the persona shifts vocabulary, tone, and the kind of considerations the model surfaces.</>,
           <><Em>You want a specific perspective.</Em> "You're a hostile board director who's seen this presentation a dozen times. What's the weakest part?" — this changes the output meaningfully.</>,
           <><Em>You want the AI to push back.</Em> "You're a senior partner reviewing this junior analyst's work. Be candid." — pulls the model out of its default helpful mode.</>,
         ]} />
@@ -728,7 +728,7 @@ export function Personas() {
             2. As [PERSONA 2 — the critic], critique that draft specifically. Don't be polite.
             3. Rewrite the draft incorporating the critique.
 
-            Here\'s the context: [your real context]
+            Here's the context: [your real context]
           </Prompt>
           <P>
             Often beats writing the doc yourself in less time, especially for documents where you've been
@@ -1069,9 +1069,9 @@ export function Iteration() {
         <TryIt title="Try it (intermediate)">
           <P>The "three versions then merge" pattern on a real task:</P>
           <Prompt>
-            I need to write a [TYPE OF DOC]. Here\'s what it\'s about: [context].
+            I need to write a [TYPE OF DOC]. Here's what it's about: [context].
 
-            Give me three genuinely different draft openings. Vary the tone, structure, and angle. Don\'t
+            Give me three genuinely different draft openings. Vary the tone, structure, and angle. Don't
             give me three rewordings of the same thing.
           </Prompt>
           <P>
@@ -1580,7 +1580,7 @@ export function PromptLibrary() {
           When you've used a prompt successfully for a few weeks, ask the AI to help you generalise it:
         </P>
         <Prompt>
-          Here\'s a prompt I\'ve been using successfully for [task]. Help me generalise it so I can use it
+          Here's a prompt I've been using successfully for [task]. Help me generalise it so I can use it
           for similar tasks. Identify the variables. Suggest where it could be tightened. Show me the
           template version.
 

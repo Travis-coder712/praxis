@@ -523,13 +523,13 @@ export function ChatVsApp() {
           <><Em>Cross-document, cross-app tasks</Em>. "Look at my emails and last week\'s meetings, then draft a summary I can paste into a doc."</>,
           <><Em>Open-ended research</Em>. "What do we know about [topic] across the org?"</>,
           <><Em>Multi-turn conversations</Em>. Refining and iterating over many exchanges — easier in Chat than in-app.</>,
-          <><Em>When you don\'t already have a document open</Em>. Start with a question, not a file.</>,
+          <><Em>When you don't already have a document open</Em>. Start with a question, not a file.</>,
         ]} />
 
         <H2>Copilot in apps — the contextual Copilot</H2>
         <P>What in-app Copilot is best at:</P>
         <UL items={[
-          <><Em>Direct manipulation of the document you\'re in</Em>. Rewriting a paragraph, generating a formula, inserting a chart.</>,
+          <><Em>Direct manipulation of the document you're in</Em>. Rewriting a paragraph, generating a formula, inserting a chart.</>,
           <><Em>Tasks scoped to a single artefact</Em>. Summarising one document, drafting a single email.</>,
           <><Em>Speed</Em>. Often faster than switching to Chat and back.</>,
         ]} />
@@ -538,7 +538,7 @@ export function ChatVsApp() {
         <KeyCallout title="When to use which">
           <UL items={[
             <><Em>You have one document open and want to work on it</Em> → in-app Copilot.</>,
-            <><Em>You\'re starting from a question and don\'t know which document the answer is in</Em> → Copilot Chat.</>,
+            <><Em>You're starting from a question and don't know which document the answer is in</Em> → Copilot Chat.</>,
             <><Em>You need to pull data from multiple places</Em> → Copilot Chat (Graph access is broader).</>,
             <><Em>You need to draft something new from scratch with no specific source</Em> → either works; Chat is more flexible.</>,
           ]} />
@@ -561,13 +561,13 @@ export function ChatVsApp() {
       <LevelUp tier="intermediate">
         <H3>Context window differences</H3>
         <P>
-          Copilot in apps generally has tighter context — it sees the document you\'re in, recent
+          Copilot in apps generally has tighter context — it sees the document you're in, recent
           conversations, and a limited slice of the Graph. Copilot Chat has access to a broader slice but
           may not have the immediate document context unless you explicitly reference it.
         </P>
         <P>
-          Practical implication: if Copilot in Word seems to "forget" what document you\'re working on
-          across turns, it\'s because Word's Copilot panel sometimes resets context. Chat tends to be
+          Practical implication: if Copilot in Word seems to "forget" what document you're working on
+          across turns, it's because Word's Copilot panel sometimes resets context. Chat tends to be
           more persistent across turns. For long, multi-turn refinements, Chat usually wins.
         </P>
 
@@ -577,7 +577,7 @@ export function ChatVsApp() {
           subtly different from m365.cloud.microsoft:
         </P>
         <UL items={[
-          <>The sidebar can read the current web page you\'re looking at. Useful for "summarise this article" without copy-paste.</>,
+          <>The sidebar can read the current web page you're looking at. Useful for "summarise this article" without copy-paste.</>,
           <>It still has Graph access (same Chat brain).</>,
           <>It's the most-convenient way to use Copilot while doing web research.</>,
         ]} />
@@ -614,7 +614,7 @@ export function ChatVsApp() {
         </P>
         <P>
           This is the layer where Copilot stops being a chat assistant and becomes an embedded business
-          capability. Most enterprises haven\'t built this out yet — early-mover advantage available.
+          capability. Most enterprises haven't built this out yet — early-mover advantage available.
         </P>
 
         <H3>The Copilot extension ecosystem</H3>
@@ -623,11 +623,11 @@ export function ChatVsApp() {
         </P>
         <UL items={[
           <><Em>Plugins</Em> — third-party services that Copilot can call. Salesforce, Atlassian, ServiceNow, and others have shipped plug-ins.</>,
-          <><Em>Connectors</Em> — Graph extensions that bring non-Microsoft data into Copilot\'s search space.</>,
+          <><Em>Connectors</Em> — Graph extensions that bring non-Microsoft data into Copilot's search space.</>,
           <><Em>Copilot Studio agents</Em> — custom agents you build yourself (Lesson 4.7).</>,
         ]} />
         <P>
-          Many enterprises haven\'t configured these yet. Worth asking your IT team which extensions are
+          Many enterprises haven't configured these yet. Worth asking your IT team which extensions are
           available in your tenant — there are often capabilities sitting unused.
         </P>
 
@@ -659,7 +659,7 @@ export function WorkVsWeb() {
     <>
       <BeginnerSection>
         <P>
-          In Copilot Chat there\'s a small toggle (sometimes labelled, sometimes implicit) between
+          In Copilot Chat there's a small toggle (sometimes labelled, sometimes implicit) between
           <Em> Work mode</Em> and <Em>Web mode</Em>. Most users miss it. It changes everything about what
           Copilot does for you.
         </P>
@@ -698,12 +698,12 @@ export function WorkVsWeb() {
         <P>
           In some interfaces, Copilot will automatically detect that a question is web-flavoured and
           switch — or use both — without you toggling. This is helpful when it works and confusing when
-          it doesn\'t. The defensive habit: explicitly check which mode you\'re in for important queries.
+          it doesn't. The defensive habit: explicitly check which mode you're in for important queries.
         </P>
 
         <KeyCallout title="The big idea">
           Work mode searches your data; Web mode searches the public web. Most users never notice the
-          toggle and get confused why Copilot can\'t answer about current news (Work mode) or doesn\'t
+          toggle and get confused why Copilot can't answer about current news (Work mode) or doesn't
           know about their internal projects (Web mode). One-click fix.
         </KeyCallout>
 
@@ -716,7 +716,7 @@ export function WorkVsWeb() {
             'Toggle to Web mode. Ask the same question. Notice the answer changes — Web mode doesn\'t see your meetings.',
             'Now ask: "What\'s the latest news on [a public topic]?" in both modes. Work mode often has no answer; Web mode does.',
           ]} />
-          <P>Once you can find the toggle and feel the difference, half the "Copilot doesn\'t do X" complaints disappear.</P>
+          <P>Once you can find the toggle and feel the difference, half the "Copilot doesn't do X" complaints disappear.</P>
         </TryIt>
       </BeginnerSection>
 
@@ -726,11 +726,11 @@ export function WorkVsWeb() {
           The data-handling differences between Work mode and Web mode matter for sensitive queries:
         </P>
         <UL items={[
-          <><Em>Work mode</Em> — all processing happens inside your M365 tenant\'s Azure OpenAI environment. Your prompt and the model\'s response stay inside the regulated data plane. Logged in Purview.</>,
-          <><Em>Web mode</Em> — your prompt is sent to Bing (a Microsoft service, but with different data-handling). Web search results come back to Copilot, which generates a response. Both your prompt and the response are still inside Microsoft\'s data plane, but the web sources are not under your tenant\'s controls.</>,
+          <><Em>Work mode</Em> — all processing happens inside your M365 tenant's Azure OpenAI environment. Your prompt and the model's response stay inside the regulated data plane. Logged in Purview.</>,
+          <><Em>Web mode</Em> — your prompt is sent to Bing (a Microsoft service, but with different data-handling). Web search results come back to Copilot, which generates a response. Both your prompt and the response are still inside Microsoft's data plane, but the web sources are not under your tenant's controls.</>,
         ]} />
         <P>
-          Practical implication: don\'t put confidential information into Web-mode queries. Use Work mode
+          Practical implication: don't put confidential information into Web-mode queries. Use Work mode
           for anything involving non-public data — and explicitly check the toggle before submitting.
         </P>
 
@@ -747,7 +747,7 @@ export function WorkVsWeb() {
         <P>
           Work mode is <Em>not</Em> "Copilot reads everything in the tenant". It's "Copilot reads
           everything <em>you</em> have access to". If a colleague has documents in a SharePoint site you
-          aren\'t a member of, Copilot won\'t surface them to you — same as if you\'d searched manually.
+          aren't a member of, Copilot won't surface them to you — same as if you'd searched manually.
         </P>
 
         <TryIt title="Try it (intermediate)">
@@ -776,7 +776,7 @@ export function WorkVsWeb() {
           'Require explicit consent before Copilot accesses certain document types.',
         ]} />
         <P>
-          If something you expect Copilot to do isn\'t working, it might be an admin policy, not a
+          If something you expect Copilot to do isn't working, it might be an admin policy, not a
           product limitation. Worth asking IT.
         </P>
 
@@ -796,7 +796,7 @@ export function WorkVsWeb() {
         </P>
 
         <TryIt title="Try it (advanced)">
-          <P>The "where does the data really go?" experiment. Ask your IT team or check your tenant\'s
+          <P>The "where does the data really go?" experiment. Ask your IT team or check your tenant's
           documentation for:</P>
           <OL items={[
             'Where is your Azure OpenAI Service hosted? (Australian customers may have local hosting; check.)',
@@ -805,7 +805,7 @@ export function WorkVsWeb() {
             'What\'s logged about your Copilot interactions, for how long, and who can review the logs?',
           ]} />
           <P>
-            Knowing the answers takes 30 minutes and saves a lot of guessing about what\'s safe to do.
+            Knowing the answers takes 30 minutes and saves a lot of guessing about what's safe to do.
           </P>
         </TryIt>
       </LevelUp>
@@ -813,7 +813,7 @@ export function WorkVsWeb() {
       <CostNote>
         <P>
           Work mode and Web mode are both included in your M365 Copilot licence — no per-mode cost. Web
-          mode queries do consume more Bing search budget on Microsoft\'s side, but you don\'t see this.
+          mode queries do consume more Bing search budget on Microsoft's side, but you don't see this.
           What you might notice: Web mode is slightly slower (search + generation) than Work mode (Graph
           + generation).
         </P>
@@ -836,7 +836,7 @@ export function Permissions() {
     <>
       <BeginnerSection>
         <P>
-          Three questions every user eventually asks: what can Copilot actually see? What can\'t it see?
+          Three questions every user eventually asks: what can Copilot actually see? What can't it see?
           And what gets logged? Knowing the answers gives you the confidence to use Copilot freely with
           real work data.
         </P>
@@ -848,16 +848,16 @@ export function Permissions() {
           <><Em>Your Teams messages</Em> — chat history in channels and DMs you participate in.</>,
           <><Em>Your calendar</Em> — meeting times, attendees, locations, descriptions.</>,
           <><Em>Meeting recordings and transcripts</Em> — for meetings you attended and that were recorded.</>,
-          <><Em>Your colleagues\' contact info</Em> — name, role, manager, team. (Not their private data — see below.)</>,
+          <><Em>Your colleagues' contact info</Em> — name, role, manager, team. (Not their private data — see below.)</>,
           <><Em>Your organisational structure</Em> — who reports to whom, which teams exist.</>,
         ]} />
 
         <H2>What Copilot cannot see</H2>
         <UL items={[
-          <><Em>Anything you don\'t have permission to see</Em>. Confidential SharePoint sites you\'re not a member of? Invisible. Your CEO\'s emails (assuming you\'re not their assistant)? Invisible. The same access rules a human user has.</>,
-          <><Em>Other tenants</Em>. If you\'re a contractor with access to multiple companies\' M365, Copilot can only see one tenant\'s data at a time.</>,
+          <><Em>Anything you don't have permission to see</Em>. Confidential SharePoint sites you're not a member of? Invisible. Your CEO's emails (assuming you're not their assistant)? Invisible. The same access rules a human user has.</>,
+          <><Em>Other tenants</Em>. If you're a contractor with access to multiple companies' M365, Copilot can only see one tenant's data at a time.</>,
           <><Em>Personal Microsoft accounts</Em> mixed in. Your work account and personal account stay separate.</>,
-          <><Em>Locally-stored documents</Em> not in OneDrive. A file on your hard drive that hasn\'t been synced isn\'t indexed.</>,
+          <><Em>Locally-stored documents</Em> not in OneDrive. A file on your hard drive that hasn't been synced isn't indexed.</>,
           <><Em>Content explicitly excluded by admin policy</Em>. Some tenants exclude specific SharePoint sites or content patterns.</>,
         ]} />
 
@@ -872,14 +872,14 @@ export function Permissions() {
         ]} />
         <P>
           These logs are accessible to your tenant administrators via Microsoft Purview. In most
-          organisations they\'re reviewed only for compliance investigations — not routinely surveilled.
-          But assume your Copilot use is auditable: don\'t put anything in a Copilot prompt you wouldn\'t
+          organisations they're reviewed only for compliance investigations — not routinely surveilled.
+          But assume your Copilot use is auditable: don't put anything in a Copilot prompt you wouldn't
           want logged.
         </P>
 
         <KeyCallout title="The big idea">
           Copilot inherits your access rights exactly — no more, no less. Everything you do with Copilot
-          is logged in the tenant\'s audit trail. Within those boundaries, it\'s safe to use freely on
+          is logged in the tenant's audit trail. Within those boundaries, it's safe to use freely on
           real work data.
         </KeyCallout>
 
@@ -888,7 +888,7 @@ export function Permissions() {
           <OL items={[
             <><Em>Pick a sensitive topic you know exists in the tenant</Em> — a project name, an org change, a financial metric.</>,
             <>Ask Copilot to "tell me everything you know about [topic]".</>,
-            <>Notice: it returns information from documents <em>you have access to</em>. If a colleague has a document on the same topic in a SharePoint site you can\'t see, Copilot won\'t include it.</>,
+            <>Notice: it returns information from documents <em>you have access to</em>. If a colleague has a document on the same topic in a SharePoint site you can't see, Copilot won't include it.</>,
             <>This is the boundary working as designed.</>,
           ]} />
         </TryIt>
@@ -900,7 +900,7 @@ export function Permissions() {
           A real risk worth knowing about: many organisations have looser permissions on internal documents
           than they realised, because permissions were set years ago and never audited. When Copilot
           starts surfacing those documents to people who technically could always see them but never
-          looked — it can feel like a leak, even though it isn\'t.
+          looked — it can feel like a leak, even though it isn't.
         </P>
         <P>
           Common examples:
@@ -913,7 +913,7 @@ export function Permissions() {
         ]} />
         <P>
           If your organisation is rolling out Copilot, this is a real pre-deployment concern — and one
-          where IT may have run a permissions audit beforehand. If they didn\'t, expect occasional
+          where IT may have run a permissions audit beforehand. If they didn't, expect occasional
           "Copilot found a document I shouldn\'t have access to" moments.
         </P>
 
@@ -935,14 +935,14 @@ export function Permissions() {
         <H3>What about external users?</H3>
         <P>
           Guests in your tenant (contractors, partners with shared SharePoint access) have Copilot access
-          to <Em>only the resources they\'ve been explicitly granted</Em>. They can\'t use Copilot to
-          discover unrelated content. But if they\'ve been added to a sensitive site, they have the same
+          to <Em>only the resources they've been explicitly granted</Em>. They can't use Copilot to
+          discover unrelated content. But if they've been added to a sensitive site, they have the same
           Copilot reach as an employee on that site.
         </P>
         <P>
           The practical rule for shared work with externals: assume they can see, via Copilot, anything
-          they could see manually. If you wouldn\'t want them to find a particular document, don\'t add
-          them to the site it\'s in.
+          they could see manually. If you wouldn't want them to find a particular document, don't add
+          them to the site it's in.
         </P>
 
         <TryIt title="Try it (intermediate)">
@@ -954,8 +954,8 @@ export function Permissions() {
           </Prompt>
           <P>
             This is genuinely useful for understanding your own exposure. Worth running once a quarter.
-            Don\'t do anything with the results except note them — that\'s a separate process — but
-            knowing what\'s visible to you is part of operating safely.
+            Don't do anything with the results except note them — that's a separate process — but
+            knowing what's visible to you is part of operating safely.
           </P>
         </TryIt>
       </LevelUp>
@@ -974,11 +974,11 @@ export function Permissions() {
           'Progressively expand the allowed list.',
         ]} />
         <P>
-          If Copilot in your tenant feels strangely narrow — can\'t find documents you know exist — ask
-          IT whether Restricted Search is active and what\'s in scope.
+          If Copilot in your tenant feels strangely narrow — can't find documents you know exist — ask
+          IT whether Restricted Search is active and what's in scope.
         </P>
 
-        <H3>The Purview audit log — what\'s captured</H3>
+        <H3>The Purview audit log — what's captured</H3>
         <P>
           Every Copilot interaction generates a Purview audit event. The captured fields:
         </P>
@@ -994,13 +994,13 @@ export function Permissions() {
         ]} />
         <P>
           For users in regulated industries: assume your prompts and responses are subject to discovery
-          and review. For everyone else: assume they\'re technically auditable but unlikely to be reviewed
-          unless there\'s a specific investigation.
+          and review. For everyone else: assume they're technically auditable but unlikely to be reviewed
+          unless there's a specific investigation.
         </P>
 
         <H3>Cross-geography data flow</H3>
         <P>
-          For Australian users, Microsoft offers Australian data residency for M365 — your tenant\'s data
+          For Australian users, Microsoft offers Australian data residency for M365 — your tenant's data
           stays in Australian Azure regions (Sydney, Melbourne). Confirm with IT that:
         </P>
         <UL items={[
@@ -1017,16 +1017,16 @@ export function Permissions() {
           <P>The compliance briefing prompt — give to your IT team:</P>
           <Prompt>
             Briefly answer for our Copilot deployment:
-            1. Where is our tenant\'s Azure OpenAI Service hosted geographically?
+            1. Where is our tenant's Azure OpenAI Service hosted geographically?
             2. Are there sensitivity labels under which Copilot is restricted?
-            3. What\'s in scope for Restricted SharePoint Search (if active)?
-            4. What\'s the data flow for Web mode queries?
+            3. What's in scope for Restricted SharePoint Search (if active)?
+            4. What's the data flow for Web mode queries?
             5. How long are Copilot audit logs retained?
             6. Who can review Copilot prompts and responses?
             7. Is there a DLP policy active against Copilot processing of certain content?
           </Prompt>
           <P>
-            Most enterprises have answers to these but they\'re not always proactively communicated. Worth
+            Most enterprises have answers to these but they're not always proactively communicated. Worth
             asking before doing anything sensitive.
           </P>
         </TryIt>
@@ -1064,7 +1064,7 @@ export function SourceDocuments() {
         </Prompt>
         <P>
           Result: a tight, quote-backed summary. The quote requirement forces grounding — if Copilot
-          can\'t quote, the bullet is suspect.
+          can't quote, the bullet is suspect.
         </P>
 
         <H3>2. Compare across documents</H3>
@@ -1080,7 +1080,7 @@ export function SourceDocuments() {
         <H3>3. Synthesise across mixed sources</H3>
         <Prompt>
           Look at /file [meeting notes] and /email [thread with John about budget]. What was decided,
-          what\'s still open, and who\'s on the hook?
+          what's still open, and who's on the hook?
         </Prompt>
         <P>
           Result: a synthesis across an email thread and a separate meeting note. The exact pattern that
@@ -1098,7 +1098,7 @@ export function SourceDocuments() {
         </P>
 
         <KeyCallout title="The big idea">
-          Tell Copilot which sources to use. Don\'t make it guess. Specific source documents +
+          Tell Copilot which sources to use. Don't make it guess. Specific source documents +
           quote-the-evidence instruction = the magic combination that produces grounded, defensible
           answers.
         </KeyCallout>
@@ -1111,7 +1111,7 @@ export function SourceDocuments() {
             'Synthesise across an email thread and a meeting note on the same topic.',
             'Find a specific piece of information you know exists somewhere in your org.',
           ]} />
-          <P>The fourth one is the most surprising. Most people don\'t realise Copilot can find specific information across their entire accessible Graph reliably.</P>
+          <P>The fourth one is the most surprising. Most people don't realise Copilot can find specific information across their entire accessible Graph reliably.</P>
         </TryIt>
       </BeginnerSection>
 
@@ -1124,7 +1124,7 @@ export function SourceDocuments() {
           <><Em>/file</Em> — documents in OneDrive / SharePoint. Word, PDF, Excel, PowerPoint.</>,
           <><Em>/email</Em> — Outlook content. Individual messages or threads.</>,
           <><Em>/meeting</Em> — calendar entries and their associated recordings/transcripts (when present).</>,
-          <><Em>/person</Em> — references a colleague\'s profile and any context Copilot has about them.</>,
+          <><Em>/person</Em> — references a colleague's profile and any context Copilot has about them.</>,
           <><Em>/loop</Em> — Loop components (less commonly used).</>,
         ]} />
         <P>
@@ -1143,7 +1143,7 @@ export function SourceDocuments() {
           'Save the conversation. Return to it across days.',
         ]} />
         <P>
-          This is essentially Copilot\'s answer to the Claude Projects pattern (Module 5). Less polished
+          This is essentially Copilot's answer to the Claude Projects pattern (Module 5). Less polished
           but works well for sustained work on a single project.
         </P>
 
@@ -1151,29 +1151,29 @@ export function SourceDocuments() {
         <P>Three failure modes worth knowing:</P>
         <UL items={[
           <><Em>The document is too long</Em>. Even with generous context, very long documents can lose detail. Fix: ask about specific sections, not the whole document.</>,
-          <><Em>The document is poorly structured</Em>. Scanned PDFs, screenshot-heavy docs, badly-formatted spreadsheets all degrade Copilot\'s comprehension. Fix: extract clean text first.</>,
-          <><Em>The document is in a SharePoint site Copilot can\'t find</Em>. Sometimes Copilot\'s search doesn\'t surface the right document. Fix: open the document directly, then ask Copilot about it ("based on the document I\'m currently looking at...").</>,
+          <><Em>The document is poorly structured</Em>. Scanned PDFs, screenshot-heavy docs, badly-formatted spreadsheets all degrade Copilot's comprehension. Fix: extract clean text first.</>,
+          <><Em>The document is in a SharePoint site Copilot can't find</Em>. Sometimes Copilot's search doesn't surface the right document. Fix: open the document directly, then ask Copilot about it ("based on the document I\'m currently looking at...").</>,
         ]} />
 
         <TryIt title="Try it (intermediate)">
-          <P>The "working set" pattern in practice. Pick a project you\'re actively working on:</P>
+          <P>The "working set" pattern in practice. Pick a project you're actively working on:</P>
           <Prompt>
-            I\'m working on [project name]. I want you to be my working brain for it. Here are the key sources:
+            I'm working on [project name]. I want you to be my working brain for it. Here are the key sources:
             - /file [strategy doc]
             - /file [budget spreadsheet]
             - /email [latest thread with the project lead]
             - /meeting [last steering committee]
 
             Read them all. Then answer:
-            (1) What\'s the current state of the project in one paragraph?
+            (1) What's the current state of the project in one paragraph?
             (2) Three open questions that need decision.
-            (3) One risk no one\'s talking about.
+            (3) One risk no one's talking about.
 
             From now on in this chat, treat these as your primary sources.
           </Prompt>
           <P>
-            Save the chat. Use it as your project\'s persistent working space. Return to it whenever
-            you\'re doing work on the project.
+            Save the chat. Use it as your project's persistent working space. Return to it whenever
+            you're doing work on the project.
           </P>
         </TryIt>
       </LevelUp>
@@ -1226,7 +1226,7 @@ export function SourceDocuments() {
         </P>
 
         <TryIt title="Try it (advanced)">
-          <P>The "audit-ready output" exercise. Pick a real high-stakes task — something you\'ll defend
+          <P>The "audit-ready output" exercise. Pick a real high-stakes task — something you'll defend
           in a meeting or send to senior stakeholders:</P>
           <Prompt>
             Task: [your real task].
@@ -1238,7 +1238,7 @@ export function SourceDocuments() {
             - For every claim in your answer, identify which source it came from.
             - Flag anything that requires interpretation as "inferred — verify".
             - Length: 300 words maximum.
-            - No conclusions that don\'t derive from the sources.
+            - No conclusions that don't derive from the sources.
           </Prompt>
           <P>
             The output: a defensible piece of analysis with explicit provenance. The pattern works for
@@ -1267,7 +1267,7 @@ export function CopilotAgents() {
         <P>
           An "agent" in Copilot is a pre-built or custom AI assistant focused on a specific job. Unlike
           general Copilot (which does whatever you ask), an agent has a defined role, a defined set of
-          sources, and a defined set of actions. It\'s how Copilot moves from "ask and answer" toward
+          sources, and a defined set of actions. It's how Copilot moves from "ask and answer" toward
           "set up and run".
         </P>
 
@@ -1279,7 +1279,7 @@ export function CopilotAgents() {
           <><Em>Sales / service / industry agents</Em> — vertical-specific. Available if your tenant has the relevant Microsoft Dynamics or Copilot vertical add-ons.</>,
         ]} />
         <P>
-          Whether you have these enabled depends on your tenant\'s configuration. Check with IT what\'s
+          Whether you have these enabled depends on your tenant's configuration. Check with IT what's
           active for your account.
         </P>
 
@@ -1296,7 +1296,7 @@ export function CopilotAgents() {
         ]} />
         <P>
           Custom agents are often more reliable than ad-hoc Copilot prompts because the scope is locked
-          in. The agent doesn\'t need to guess what to read or how to behave — it\'s configured.
+          in. The agent doesn't need to guess what to read or how to behave — it's configured.
         </P>
 
         <H2>When agents are worth building</H2>
@@ -1306,18 +1306,18 @@ export function CopilotAgents() {
           'A workflow that benefits from defaults — e.g., "the customer onboarding agent" that asks specific questions in a specific order.',
         ]} />
         <P>
-          Don\'t build agents for one-off tasks; the setup overhead doesn\'t pay back. Build them for
+          Don't build agents for one-off tasks; the setup overhead doesn't pay back. Build them for
           repeated, scoped, shared work.
         </P>
 
         <KeyCallout title="The big idea">
           Copilot is the generalist; agents are the specialists. The built-in agents handle the obvious
-          recurring tasks (email triage, meeting recap). Custom agents extend this to your team\'s
+          recurring tasks (email triage, meeting recap). Custom agents extend this to your team's
           recurring tasks. Built right, an agent saves hours per week — but the setup investment is real.
         </KeyCallout>
 
         <TryIt>
-          <P>Discover what\'s already available in your tenant:</P>
+          <P>Discover what's already available in your tenant:</P>
           <OL items={[
             'In Copilot Chat, look for an "Agents" or "Apps" icon (location varies; sometimes a chip near the prompt input).',
             'Browse what\'s enabled in your tenant.',
@@ -1342,16 +1342,16 @@ export function CopilotAgents() {
           'Publish to specific surfaces (Copilot Chat, Teams, a website).',
         ]} />
         <P>
-          The first agent takes ~30-60 minutes to build. After that, you\'ll have templates and patterns
+          The first agent takes ~30-60 minutes to build. After that, you'll have templates and patterns
           and subsequent agents drop to 10-20 minutes.
         </P>
 
         <H3>Where custom agents commonly fail</H3>
         <UL items={[
           <><Em>Scope too broad</Em>. "An agent that helps with everything project-related" — too vague, performs poorly. Build narrow agents for specific tasks.</>,
-          <><Em>Knowledge sources too generic</Em>. Pointing the agent at "all of SharePoint" — it can\'t prioritise. Pick specific sites and folders.</>,
+          <><Em>Knowledge sources too generic</Em>. Pointing the agent at "all of SharePoint" — it can't prioritise. Pick specific sites and folders.</>,
           <><Em>System prompt too long or unclear</Em>. Treat the system prompt like any prompt — the five-part framework from Module 3 applies.</>,
-          <><Em>No clear "this agent doesn\'t do that" boundary</Em>. Add explicit constraints: "If asked about [out of scope], politely redirect."</>,
+          <><Em>No clear "this agent doesn't do that" boundary</Em>. Add explicit constraints: "If asked about [out of scope], politely redirect."</>,
           <><Em>Maintenance neglect</Em>. Knowledge sources go stale. Permissions change. Set a quarterly review.</>,
         ]} />
 
@@ -1365,7 +1365,7 @@ export function CopilotAgents() {
             'Use it for two weeks. Note where it consistently helps vs where it consistently fails.',
           ]} />
           <P>
-            Most professionals never build a custom agent. Those who do report it\'s the single largest
+            Most professionals never build a custom agent. Those who do report it's the single largest
             productivity unlock from M365 Copilot — bigger than the chat surface itself.
           </P>
         </TryIt>
@@ -1407,7 +1407,7 @@ export function CopilotAgents() {
 
         <H3>Agents vs. Power Automate flows</H3>
         <P>
-          There\'s overlap between Copilot agents (Copilot Studio) and traditional automation flows
+          There's overlap between Copilot agents (Copilot Studio) and traditional automation flows
           (Power Automate). Rough rule of thumb:
         </P>
         <UL items={[
@@ -1438,7 +1438,7 @@ export function CopilotAgents() {
       <CostNote>
         <P>
           Built-in agents are included with your M365 Copilot licence. Custom agents (Copilot Studio)
-          typically require an additional licence tier or per-usage billing — varies by Microsoft\'s
+          typically require an additional licence tier or per-usage billing — varies by Microsoft's
           current pricing. Check with IT before committing to a custom-agent strategy. The licensing has
           changed several times since Copilot Studio launched.
         </P>
@@ -1463,9 +1463,9 @@ export function CopilotWorkout() {
       <BeginnerSection>
         <P>
           The Module 4 capstone. Ten tasks of increasing sophistication. Each one is realistic — these are
-          the kinds of things working professionals do, only now you\'re doing them with Copilot. Try a
+          the kinds of things working professionals do, only now you're doing them with Copilot. Try a
           task a day, or knock out a couple at a time. The set takes you from "first useful Copilot
-          prompt" to "I\'m getting genuine leverage from this tool".
+          prompt" to "I'm getting genuine leverage from this tool".
         </P>
 
         <H2>Tasks 1–3 — beginner</H2>
@@ -1474,7 +1474,7 @@ export function CopilotWorkout() {
         <P>The single highest-leverage Copilot move for most knowledge workers.</P>
         <Prompt>
           (In Outlook, with a long thread open or selected.) Summarise this thread. What was decided?
-          What\'s open? Who\'s on the hook for what?
+          What's open? Who's on the hook for what?
         </Prompt>
 
         <H3>Task 2 — Summarise a long document</H3>
@@ -1498,7 +1498,7 @@ export function CopilotWorkout() {
         <H3>Task 4 — Cross-document synthesis</H3>
         <Prompt>
           (In Copilot Chat.) Compare /file [project-plan v1] with /file [project-plan v2]. What materially
-          changed? What\'s in v2 that wasn\'t in v1, and vice versa? Flag any risks the changes introduce.
+          changed? What's in v2 that wasn't in v1, and vice versa? Flag any risks the changes introduce.
         </Prompt>
 
         <H3>Task 5 — Meeting prep</H3>
@@ -1506,7 +1506,7 @@ export function CopilotWorkout() {
           (In Copilot Chat.) I have a meeting with /person [colleague] in two days about /file [topic
           document]. We last met /meeting [previous meeting]. Help me prepare:
           - What did we agree last time?
-          - What\'s changed since?
+          - What's changed since?
           - Three open questions to bring.
           - One outcome I should push for.
         </Prompt>
@@ -1541,7 +1541,7 @@ export function CopilotWorkout() {
         <Prompt>
           (In Copilot Chat.) For the last quarter, search across my emails, meetings, and shared
           documents for [topic]. Identify:
-          - Three commitments I made that haven\'t been fulfilled.
+          - Three commitments I made that haven't been fulfilled.
           - Two open questions colleagues raised that nobody answered.
           - One pattern of recurring discussion that might warrant explicit attention.
         </Prompt>
@@ -1552,7 +1552,7 @@ export function CopilotWorkout() {
           working set:
         </P>
         <Prompt>
-          I\'m the [your role] on [project name]. The key sources for this project are:
+          I'm the [your role] on [project name]. The key sources for this project are:
           - /file [strategy doc]
           - /file [budget]
           - /file [risk register]
@@ -1563,9 +1563,9 @@ export function CopilotWorkout() {
           - Current state.
           - Top 3 risks.
           - 2 decisions outstanding.
-          - 1 thing I\'m probably underweighting.
+          - 1 thing I'm probably underweighting.
 
-          Keep this conversation open. I\'ll come back with follow-ups.
+          Keep this conversation open. I'll come back with follow-ups.
         </Prompt>
         <P>
           Now use this conversation continuously for the next two weeks. Track how much faster project
@@ -1585,7 +1585,7 @@ export function CopilotWorkout() {
           a workout to build the habits.
           <br /><br />
           The next modules (Claude, Claude Code, multi-model workflows) are about the tools available to
-          you outside Copilot — useful for specific tasks where Copilot isn\'t the right fit. But for
+          you outside Copilot — useful for specific tasks where Copilot isn't the right fit. But for
           anything involving your work data, Copilot is the answer. Use the patterns from this module
           tomorrow and the productivity gains start immediately.
         </KeyCallout>
@@ -1595,7 +1595,7 @@ export function CopilotWorkout() {
           <UL items={[
             <><Em>Just starting</Em>: do tasks 1, 2, 3 this week. One per day.</>,
             <><Em>Comfortable with chat-style use</Em>: do tasks 4, 5, 6 this week. One per day, alongside your normal work.</>,
-            <><Em>Confident user</Em>: do tasks 7, 8 this week. They\'ll change how you think about Copilot.</>,
+            <><Em>Confident user</Em>: do tasks 7, 8 this week. They'll change how you think about Copilot.</>,
             <><Em>Already getting leverage</Em>: do tasks 9, 10 over the next two weeks. The working-set and custom-agent patterns are the highest-leverage moves in this whole module.</>,
           ]} />
         </TryIt>
@@ -1620,7 +1620,7 @@ export function CopilotWorkout() {
         <H3>The compound effect</H3>
         <P>
           The first time you save 20 minutes with a Copilot task it feels nice. The second month, when
-          you have 30 such tasks in your routine and you\'re saving 5 hours a week, the compounding becomes
+          you have 30 such tasks in your routine and you're saving 5 hours a week, the compounding becomes
           obvious. The professionals who internalise this become measurably more productive than those
           who use Copilot occasionally.
         </P>
@@ -1644,12 +1644,12 @@ export function CopilotWorkout() {
 
         <H3>The "stuck at Task X" check</H3>
         <P>
-          Each task in this set is genuinely doable. If you\'re stuck on a particular task, the failure
+          Each task in this set is genuinely doable. If you're stuck on a particular task, the failure
           usually points to one of three things:
         </P>
         <UL items={[
-          <><Em>You don\'t have the licence tier needed</Em> — particularly for tasks 9, 10. Check with IT.</>,
-          <><Em>Your source data isn\'t where Copilot can find it</Em> — documents in personal OneDrive that aren\'t synced, or in non-indexed locations.</>,
+          <><Em>You don't have the licence tier needed</Em> — particularly for tasks 9, 10. Check with IT.</>,
+          <><Em>Your source data isn't where Copilot can find it</Em> — documents in personal OneDrive that aren't synced, or in non-indexed locations.</>,
           <><Em>The prompting needs sharpening</Em> — return to Module 3 for the patterns.</>,
         ]} />
       </LevelUp>
